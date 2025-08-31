@@ -26,7 +26,8 @@ class PortfolioNavigation {
     // Navigation links
     this.navLinks = document.querySelectorAll('.nav-link');
     this.mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
-    this.allNavLinks = [...this.navLinks, ...this.mobileNavLinks];
+    this.footerLinks = document.querySelectorAll('.footer-links a');
+    this.allNavLinks = [...this.navLinks, ...this.mobileNavLinks, ...this.footerLinks];
     
     // Sections for scroll spy
     this.sections = document.querySelectorAll('section[id]');
@@ -338,54 +339,58 @@ const AnimationUtils = {
   }
 };
 
+// Navigation 클래스를 전역에서 사용할 수 있도록 등록
+window.PortfolioNavigation = PortfolioNavigation;
+
+// 자동 초기화는 component-loader.js에서 담당
 // Initialize navigation when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-  // Initialize navigation
-  const portfolioNav = new PortfolioNavigation();
+// document.addEventListener('DOMContentLoaded', () => {
+//   // Initialize navigation
+//   const portfolioNav = new PortfolioNavigation();
+//   
+//   // Make navigation globally available
+//   window.PortfolioNavigation = portfolioNav;
   
-  // Make navigation globally available
-  window.PortfolioNavigation = portfolioNav;
+  // 이 부분도 component-loader.js에서 처리
+  // const scrollElements = document.querySelectorAll('[data-scroll-animation]');
   
-  // Initialize scroll animations for elements
-  const scrollElements = document.querySelectorAll('[data-scroll-animation]');
-  
-  if (scrollElements.length > 0) {
-    const scrollObserver = AnimationUtils.createScrollObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('animate-in');
-          scrollObserver.unobserve(entry.target);
-        }
-      });
-    });
-    
-    scrollElements.forEach(element => {
-      scrollObserver.observe(element);
-    });
-  }
+  // if (scrollElements.length > 0) {
+  //   const scrollObserver = AnimationUtils.createScrollObserver((entries) => {
+  //     entries.forEach(entry => {
+  //       if (entry.isIntersecting) {
+  //         entry.target.classList.add('animate-in');
+  //         scrollObserver.unobserve(entry.target);
+  //       }
+  //     });
+  //   });
+  //   
+  //   scrollElements.forEach(element => {
+  //     scrollObserver.observe(element);
+  //   });
+  // }
   
   // Initialize counter animations
-  const counterElements = document.querySelectorAll('[data-counter]');
+  // const counterElements = document.querySelectorAll('[data-counter]');
   
-  if (counterElements.length > 0) {
-    const counterObserver = AnimationUtils.createScrollObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const element = entry.target;
-          const endValue = parseInt(element.getAttribute('data-counter'));
-          AnimationUtils.animateCounter(element, 0, endValue);
-          counterObserver.unobserve(element);
-        }
-      });
-    });
-    
-    counterElements.forEach(element => {
-      counterObserver.observe(element);
-    });
-  }
+  // if (counterElements.length > 0) {
+  //   const counterObserver = AnimationUtils.createScrollObserver((entries) => {
+  //     entries.forEach(entry => {
+  //       if (entry.isIntersecting) {
+  //         const element = entry.target;
+  //         const endValue = parseInt(element.getAttribute('data-counter'));
+  //         AnimationUtils.animateCounter(element, 0, endValue);
+  //         counterObserver.unobserve(element);
+  //       }
+  //     });
+  //   });
+  //   
+  //   counterElements.forEach(element => {
+  //     counterObserver.observe(element);
+  //   });
+  // }
   
-  console.log('Portfolio Navigation initialized successfully! 🚀');
-});
+  // console.log('Portfolio Navigation initialized successfully! 🚀');
+// });
 
 // Export for module usage
 if (typeof module !== 'undefined' && module.exports) {

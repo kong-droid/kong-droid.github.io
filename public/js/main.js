@@ -455,166 +455,24 @@ const PortfolioAnimations = {
   }
 };
 
+// 클래스를 전역에서 사용할 수 있도록 등록
+window.PortfolioMain = PortfolioMain;
+window.PortfolioAnimations = PortfolioAnimations;
+
+// 자동 초기화는 component-loader.js에서 담당
 // Initialize main functionality when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-  // Initialize main portfolio functionality
-  const portfolioMain = new PortfolioMain();
+// document.addEventListener('DOMContentLoaded', () => {
+//   // Initialize main portfolio functionality
+//   const portfolioMain = new PortfolioMain();
+//   
+//   // Make main functionality globally available
+//   window.PortfolioMain = portfolioMain;
+//   window.PortfolioAnimations = PortfolioAnimations;
   
-  // Make main functionality globally available
-  window.PortfolioMain = portfolioMain;
-  window.PortfolioAnimations = PortfolioAnimations;
-  
-  // Add custom CSS for animations
-  const style = document.createElement('style');
-  style.textContent = `
-    .reveal-element {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.6s ease;
-    }
-    
-    .reveal-element.revealed {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    
-    .typing-animation {
-      overflow: hidden;
-      border-right: 3px solid var(--color-secondary);
-      white-space: nowrap;
-      animation: typing 1.5s steps(20) forwards, blink-caret 0.75s step-end infinite;
-    }
-    
-    @keyframes typing {
-      from { width: 0; }
-      to { width: 100%; }
-    }
-    
-    @keyframes blink-caret {
-      from, to { border-color: transparent; }
-      50% { border-color: var(--color-secondary); }
-    }
-    
-    .skill-bar {
-      width: 0%;
-      height: 8px;
-      background: linear-gradient(90deg, var(--color-secondary), var(--color-accent));
-      border-radius: 4px;
-      transition: width 1.5s ease-in-out;
-      position: relative;
-    }
-    
-    .skill-bar.animated::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 4px;
-      height: 100%;
-      background: white;
-      border-radius: 2px;
-      box-shadow: 0 0 10px var(--color-secondary);
-      animation: glow 0.5s ease-in-out;
-    }
-    
-    @keyframes glow {
-      0% { opacity: 0; }
-      50% { opacity: 1; }
-      100% { opacity: 0; }
-    }
-    
-    .floating {
-      animation: float 6s ease-in-out infinite;
-    }
-    
-    @keyframes float {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-10px); }
-    }
-    
-    .bounce {
-      animation: bounce 1s ease-in-out;
-    }
-    
-    @keyframes bounce {
-      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-      40% { transform: translateY(-10px); }
-      60% { transform: translateY(-5px); }
-    }
-    
-    .notification {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      background: var(--color-bg-primary);
-      border: 1px solid var(--color-border);
-      border-radius: var(--border-radius-md);
-      padding: var(--spacing-md);
-      box-shadow: var(--shadow-lg);
-      display: flex;
-      align-items: center;
-      gap: var(--spacing-sm);
-      z-index: 1000;
-      transform: translateX(400px);
-      transition: transform 0.3s ease;
-    }
-    
-    .notification.success {
-      border-left: 4px solid var(--color-secondary);
-      color: var(--color-secondary);
-    }
-    
-    .notification.show {
-      transform: translateX(0);
-    }
-    
-    .field-error {
-      display: block;
-      color: var(--color-accent);
-      font-size: var(--font-size-sm);
-      margin-top: var(--spacing-xs);
-    }
-    
-    .form-group input.error,
-    .form-group textarea.error {
-      border-color: var(--color-accent);
-    }
-    
-    .btn.loading {
-      pointer-events: none;
-      opacity: 0.7;
-    }
-    
-    .timeline-marker.pulse {
-      animation: pulse 2s infinite;
-    }
-    
-    .timeline-content.slide-in {
-      animation: slideIn 0.6s ease forwards;
-    }
-    
-    @keyframes pulse {
-      0% { box-shadow: 0 0 0 0 rgba(52, 152, 219, 0.7); }
-      70% { box-shadow: 0 0 0 10px rgba(52, 152, 219, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(52, 152, 219, 0); }
-    }
-    
-    @keyframes slideIn {
-      from {
-        opacity: 0;
-        transform: translateX(-20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
-  `;
-  
-  document.head.appendChild(style);
-  
-  console.log('Portfolio Main functionality initialized successfully! ✨');
-});
+  // CSS는 component-loader.js에서 추가
+  // const style = document.createElement('style');
+  // 나머지 코드는 주석 처리
+// });
 
 // Export for module usage
 if (typeof module !== 'undefined' && module.exports) {
