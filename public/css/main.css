@@ -1280,12 +1280,13 @@
   padding-top: var(--spacing-xl);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   text-align: center;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .footer-bottom p {
   margin: var(--spacing-xs) 0;
   font-size: var(--font-size-sm);
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .footer-bottom i {
@@ -1351,6 +1352,17 @@
   100% {
     opacity: 1;
     transform: scale(1);
+  }
+}
+
+@keyframes skillBarMobile {
+  from {
+    width: 0%;
+    background: linear-gradient(90deg, var(--color-secondary), var(--color-accent));
+  }
+  to {
+    width: var(--skill-width, 0%);
+    background: linear-gradient(90deg, var(--color-secondary), var(--color-accent));
   }
 }
 
@@ -1502,6 +1514,16 @@
     grid-template-columns: 1fr;
   }
   
+  /* 스킬바 애니메이션 보강 - 모바일에서 확실한 작동을 위해 */
+  .skill-bar {
+    transition: width 1.5s ease-in-out !important;
+    will-change: width;
+  }
+  
+  .skill-bar.animated {
+    animation: skillBarMobile 1.5s ease-in-out forwards;
+  }
+  
   .timeline::before {
     left: 20px;
   }
@@ -1562,5 +1584,87 @@
   
   .social-links {
     justify-content: center;
+  }
+}
+
+/* Medium screens (481px ~ 650px) - 스킬바 애니메이션 보강 */
+@media (min-width: 481px) and (max-width: 650px) {
+  .skill-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--color-secondary), var(--color-accent));
+    border-radius: 4px;
+    width: 0%;
+    transition: width 1.8s ease-in-out !important;
+    position: relative;
+    will-change: width;
+    transform: translateZ(0);
+  }
+  
+  .skill-bar.animated {
+    animation: none !important;
+  }
+  
+  /* 스킬바가 확실히 보이도록 배경색 조정 */
+  .skills-section {
+    background: var(--color-bg-secondary);
+  }
+  
+  .skill-category {
+    background: var(--color-bg-primary);
+    box-shadow: var(--shadow-sm);
+  }
+}
+
+/* Small Mobile (480px 이하) - 스킬바 애니메이션 특별 처리 */
+@media (max-width: 480px) {
+  .skill-category {
+    padding: var(--spacing-lg);
+  }
+  
+  .skill-item {
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  .skill-name {
+    font-size: var(--font-size-base);
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .skill-level {
+    height: 6px;
+    background: var(--color-border);
+    border-radius: 3px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .skill-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--color-secondary), var(--color-accent));
+    border-radius: 3px;
+    width: 0%;
+    transition: width 2s ease-out !important;
+    position: relative;
+    will-change: width;
+    transform: translateZ(0);
+  }
+  
+  .skill-bar.animated {
+    animation: none !important;
+  }
+  
+  .skill-years {
+    font-size: var(--font-size-xs);
+    margin-top: var(--spacing-xs);
+  }
+  
+  /* 스킬바가 확실히 보이도록 배경색 조정 */
+  .skills-section {
+    background: var(--color-bg-secondary);
+  }
+  
+  .skill-category {
+    background: var(--color-bg-primary);
+    box-shadow: var(--shadow-sm);
   }
 }

@@ -138,7 +138,7 @@ class PortfolioMain {
     }, {
       root: null,
       rootMargin: '0px',
-      threshold: 0.3
+      threshold: 0.1
     });
 
     skillObserver.observe(skillSection);
