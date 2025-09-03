@@ -444,11 +444,31 @@
 .info-label {
   font-weight: var(--font-weight-medium);
   color: var(--color-text);
+  flex-shrink: 0; /* 라벨 크기 고정 */
 }
 
 .info-value {
   font-weight: var(--font-weight-medium);
   color: var(--color-secondary);
+  text-align: right;
+  flex: 1;
+  margin-left: var(--spacing-md);
+  min-width: 0; /* flex 자식 요소의 최소 너비 제거 */
+}
+
+/* 모바일에서는 세로 정렬로 변경 */
+@media (max-width: 768px) {
+  .info-list li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .info-value {
+    text-align: left;
+    margin-left: 0;
+    margin-top: var(--spacing-xs);
+    width: 100%;
+  }
 }
 
 .cert-list {
