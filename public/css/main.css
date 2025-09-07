@@ -914,9 +914,12 @@
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: var(--spacing-xl);
   margin-bottom: var(--spacing-3xl);
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .project-card {
@@ -933,12 +936,6 @@
   box-shadow: var(--shadow-xl);
 }
 
-.project-card.featured {
-  grid-column: 1 / -1;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0;
-}
 
 .project-image {
   position: relative;
@@ -946,9 +943,6 @@
   height: 250px;
 }
 
-.project-card.featured .project-image {
-  height: 400px;
-}
 
 .project-image img {
   width: 100%;
@@ -1444,9 +1438,6 @@
     border-left-color: transparent;
   }
   
-  .project-card.featured {
-    grid-template-columns: 1fr;
-  }
   
   .footer-content {
     grid-template-columns: 1fr 1fr;
@@ -1594,9 +1585,6 @@
     grid-template-columns: 1fr;
   }
   
-  .project-card.featured {
-    grid-template-columns: 1fr;
-  }
   
   .project-achievements {
     flex-direction: column;

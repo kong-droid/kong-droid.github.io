@@ -2,75 +2,36 @@
 <section id="projects" class="projects-preview section section-bg">
   <div class="container">
     <div class="section-header">
-      <h2 class="section-title">Featured Projects</h2>
+      <h2 class="section-title">Projects</h2>
       <p class="section-subtitle">주요 프로젝트 소개</p>
     </div>
     
     <div class="projects-grid">
-      <div class="project-card featured">
+      <!-- 스마트팟 -->
+      <div class="project-card">
         <div class="project-image">
-          <img src="public/images/projects/smartpod-main.jpg" alt="스마트팟 프로젝트" loading="lazy">
+          <img src="public/images/projects/smartpot-preview.jpg" alt="스마트팟 프로젝트" loading="lazy">
           <div class="project-overlay">
-            <a href="views/thermolab/smartpod.html" class="btn btn-primary">상세 보기</a>
+            <a href="views/thermolab/smartpod.html" class="btn btn-primary">자세히 보기</a>
           </div>
         </div>
         <div class="project-content">
           <div class="project-header">
-            <h3>스마트팟</h3>
+            <h3>스마트팟 (SmartPot)</h3>
             <span class="project-period">2023.04 ~ 진행중</span>
           </div>
           <p class="project-description">
-            데이터 로거의 실시간 온도를 집계하는 모바일 서버와 관제 시스템. 
-            AWS 최적화로 RDS 비용 50% 절감 달성.
+            실시간 데이터 로거 온도 집계 및 관제 시스템
           </p>
-          <div class="project-achievements">
-            <span class="achievement-badge">RDS 비용 50% ↓</span>
-            <span class="achievement-badge">조회속도 3초→0.5초</span>
-            <span class="achievement-badge">재사용성 70% ↑</span>
-          </div>
-          <div class="project-tech">
-            <span class="tech-tag">Java</span>
-            <span class="tech-tag">Spring Boot</span>
-            <span class="tech-tag">PostgreSQL</span>
-            <span class="tech-tag">AWS</span>
-          </div>
         </div>
       </div>
       
+      <!-- GC CELL 중계 서버 -->
       <div class="project-card">
         <div class="project-image">
-          <img src="public/images/projects/o2meet-main.jpg" alt="오투미트 프로젝트" loading="lazy">
+          <img src="public/images/projects/gccell-preview.jpg" alt="GC CELL 중계 서버" loading="lazy">
           <div class="project-overlay">
-            <a href="views/ezpmp/o2meet.html" class="btn btn-secondary">상세 보기</a>
-          </div>
-        </div>
-        <div class="project-content">
-          <div class="project-header">
-            <h3>오투미트</h3>
-            <span class="project-period">2021.01 ~ 2023.01</span>
-          </div>
-          <p class="project-description">
-            디지털 박람회 자동 생성 플랫폼. 시연 웹 제작으로 기획팀에 역제안하여 
-            실제 기능 개발을 이끌어낸 프로젝트.
-          </p>
-          <div class="project-achievements">
-            <span class="achievement-badge">조회속도 40초→1초</span>
-            <span class="achievement-badge">SSO 로그인 구축</span>
-          </div>
-          <div class="project-tech">
-            <span class="tech-tag">Java</span>
-            <span class="tech-tag">Spring Boot</span>
-            <span class="tech-tag">MySQL</span>
-            <span class="tech-tag">Thymeleaf</span>
-          </div>
-        </div>
-      </div>
-      
-      <div class="project-card">
-        <div class="project-image">
-          <img src="public/images/projects/gc-cell-main.jpg" alt="GC CELL 중계 서버" loading="lazy">
-          <div class="project-overlay">
-            <a href="views/thermolab/gc-cell.html" class="btn btn-secondary">상세 보기</a>
+            <a href="views/thermolab/smartpod-gccell.html" class="btn btn-primary">자세히 보기</a>
           </div>
         </div>
         <div class="project-content">
@@ -79,19 +40,65 @@
             <span class="project-period">2024.12 ~ 2025.03</span>
           </div>
           <p class="project-description">
-            GC CELL 서버에 실시간 온도 데이터 전송 기능을 구현한 중계 서버. 
-            220대 이상 데이터 로거 판매 성과 달성.
+            데이터 로거 온도를 GC CELL 서버로 전송하는 실시간 중계 서버
           </p>
-          <div class="project-achievements">
-            <span class="achievement-badge">220대+ 판매</span>
-            <span class="achievement-badge">추가 구매 확보</span>
+        </div>
+      </div>
+      
+      <!-- 오투미트 -->
+      <div class="project-card">
+        <div class="project-image">
+          <img src="public/images/projects/o2meet-preview.jpg" alt="오투미트 프로젝트" loading="lazy">
+          <div class="project-overlay">
+            <a href="views/ezpmp/o2meet.html" class="btn btn-primary">자세히 보기</a>
           </div>
-          <div class="project-tech">
-            <span class="tech-tag">Kotlin</span>
-            <span class="tech-tag">Spring Boot</span>
-            <span class="tech-tag">PostgreSQL</span>
-            <span class="tech-tag">AWS</span>
+        </div>
+        <div class="project-content">
+          <div class="project-header">
+            <h3>오투미트 (O2MEET)</h3>
+            <span class="project-period">2021.01 ~ 2023.02</span>
           </div>
+          <p class="project-description">
+            누구나 쉽게 행사를 만들고 개최할 수 있는 통합 플랫폼
+          </p>
+        </div>
+      </div>
+      
+      <!-- 힐링페스타 경주 2021 -->
+      <div class="project-card">
+        <div class="project-image">
+          <img src="public/images/projects/healingfesta-preview.jpg" alt="힐링페스타 경주 2021" loading="lazy">
+          <div class="project-overlay">
+            <a href="views/ezpmp/healingfesta-2021.html" class="btn btn-primary">자세히 보기</a>
+          </div>
+        </div>
+        <div class="project-content">
+          <div class="project-header">
+            <h3>힐링페스타 경주 2021</h3>
+            <span class="project-period">2021.05 ~ 2021.11</span>
+          </div>
+          <p class="project-description">
+            힐링 프로그램 소개 및 온라인 강의 결제 시스템
+          </p>
+        </div>
+      </div>
+      
+      <!-- 디키디키 -->
+      <div class="project-card">
+        <div class="project-image">
+          <img src="public/images/projects/ddp-dikidiki-preview.jpg" alt="디키디키 DDP점" loading="lazy">
+          <div class="project-overlay">
+            <a href="views/ezpmp/dikidiki.html" class="btn btn-primary">자세히 보기</a>
+          </div>
+        </div>
+        <div class="project-content">
+          <div class="project-header">
+            <h3>디키디키 (DDP 디키디키점)</h3>
+            <span class="project-period">2020.10 ~ 2021.12</span>
+          </div>
+          <p class="project-description">
+            DDP 디키디키점 예약 및 소개 시스템
+          </p>
         </div>
       </div>
     </div>
