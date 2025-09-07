@@ -356,9 +356,223 @@ const PortfolioAnimations = {
   }
 };
 
+// Project Modal Data
+const projectData = {
+  'smartpod': {
+    title: '스마트팟 (SmartPod)',
+    period: '2023.04 ~ 진행중',
+    description: '실시간으로 데이터 로거의 온도를 집계하고 레포트를 보여주는 관제 시스템',
+    features: [
+      '실시간 온도 데이터 수집 및 모니터링',
+      '데이터 시각화 및 리포팅 시스템',
+      '알림 및 경고 시스템',
+      '사용자 관리 및 권한 제어'
+    ],
+    techStack: ['Java', 'Spring Boot', 'PostgreSQL', 'AWS', 'Docker'],
+    achievements: ['RDS 비용 50% 절감', '조회속도 3초→0.5초 개선']
+  },
+  'gccell': {
+    title: 'GC CELL 중계 서버',
+    period: '2024.12 ~ 2025.03',
+    description: '실시간으로 데이터 로거의 온도를 집계해 GC CELL 서버에 온도 데이터를 전송하는 서버',
+    features: [
+      '다수의 데이터 로거로부터 실시간 온도 수집',
+      'GC CELL 서버와의 안정적인 통신',
+      '데이터 무결성 및 전송 오류 처리',
+      '시스템 모니터링 및 로그 관리'
+    ],
+    techStack: ['Kotlin', 'Spring Boot', 'PostgreSQL', 'AWS', 'REST API'],
+    achievements: []
+  },
+  'o2meet': {
+    title: '오투미트 (O2MEET)',
+    period: '2021.01 ~ 2023.02',
+    description: '모두가 행사를 편하게 만들고 개최하는 시스템',
+    features: [
+      '행사 생성 및 관리 플랫폼',
+      '참가자 등록 및 관리',
+      '결제 시스템 연동',
+      '행사 홍보 및 마케팅 도구',
+      '실시간 알림 및 소통 기능'
+    ],
+    techStack: ['Java', 'Spring Boot', 'MySQL', 'Thymeleaf', 'JavaScript'],
+    achievements: []
+  },
+  'healingfesta': {
+    title: '힐링페스타 경주 2021',
+    period: '2021.05 ~ 2021.11',
+    description: '다양한 힐링 프로그램을 소개하고, 간편 오프라인 결제로 온라인 강의를 들을 수 있는 시스템',
+    features: [
+      '힐링 프로그램 소개 및 카탈로그',
+      '온라인 강의 플랫폼',
+      '오프라인 결제 시스템 연동',
+      '사용자 학습 진도 관리',
+      '강사-수강생 소통 기능'
+    ],
+    techStack: ['PHP', 'MySQL', 'JavaScript', 'HTML/CSS', 'Payment API'],
+    achievements: []
+  },
+  'dikidiki': {
+    title: '디키디키 (DDP 디키디키점)',
+    period: '2020.10 ~ 2021.12',
+    description: 'DDP 디키디키점 예약 및 소개 시스템',
+    features: [
+      '매장 소개 및 메뉴 관리',
+      '테이블 예약 시스템',
+      '실시간 예약 현황 관리',
+      '고객 관리 및 알림 서비스',
+      '매출 및 통계 관리'
+    ],
+    techStack: ['PHP', 'MySQL', 'JavaScript', 'HTML/CSS', 'jQuery'],
+    achievements: []
+  }
+};
+
+// Project Modal Manager
+class ProjectModal {
+  constructor() {
+    this.modal = null;
+    this.modalContainer = null;
+    this.modalTitle = null;
+    this.modalPeriod = null;
+    this.modalContent = null;
+    this.modalClose = null;
+    this.isOpen = false;
+    this.lastFocusedElement = null;
+    
+    this.init();
+  }
+
+  init() {
+    this.bindElements();
+    this.bindEvents();
+  }
+
+  bindElements() {
+    this.modal = document.getElementById('projectModal');
+    this.modalContainer = this.modal?.querySelector('.modal-container');
+    this.modalTitle = this.modal?.querySelector('.modal-title');
+    this.modalPeriod = this.modal?.querySelector('.modal-period');
+    this.modalContent = this.modal?.querySelector('.modal-content');
+    this.modalClose = this.modal?.querySelector('.modal-close');
+  }
+
+  bindEvents() {
+    if (!this.modal) return;
+
+    // 카드 클릭 이벤트
+    document.addEventListener('click', (e) => {
+      const projectCard = e.target.closest('[data-project-id]');
+      if (projectCard) {
+        e.preventDefault();
+        const projectId = projectCard.dataset.projectId;
+        this.openModal(projectId);
+      }
+    });
+
+    // 모달 닫기 이벤트들
+    this.modalClose?.addEventListener('click', () => this.closeModal());
+    this.modal?.addEventListener('click', (e) => {
+      // 모달 배경 클릭 시 닫기 (모달 컨테이너 클릭은 제외)
+      if (e.target === this.modal) {
+        this.closeModal();
+      }
+    });
+
+    // ESC 키로 닫기
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && this.isOpen) {
+        this.closeModal();
+      }
+    });
+
+    // 모달 컨테이너 클릭 시 이벤트 전파 방지
+    this.modalContainer?.addEventListener('click', (e) => {
+      e.stopPropagation();
+    });
+  }
+
+  openModal(projectId) {
+    const data = projectData[projectId];
+    if (!data || !this.modal) return;
+
+    this.lastFocusedElement = document.activeElement;
+    
+    // 모달 콘텐츠 생성
+    this.populateModalContent(data);
+    
+    // 모달 표시
+    this.modal.classList.remove('hidden');
+    this.modal.classList.add('show');
+    
+    // 스크롤 잠금
+    document.body.style.overflow = 'hidden';
+    
+    // 포커스 관리
+    setTimeout(() => {
+      this.modalClose?.focus();
+    }, 300);
+    
+    this.isOpen = true;
+  }
+
+  closeModal() {
+    if (!this.modal) return;
+    
+    // 모달 숨기기
+    this.modal.classList.remove('show');
+    this.modal.classList.add('hidden');
+    
+    // 스크롤 복원
+    document.body.style.overflow = '';
+    
+    // 포커스 복원
+    if (this.lastFocusedElement) {
+      this.lastFocusedElement.focus();
+      this.lastFocusedElement = null;
+    }
+    
+    this.isOpen = false;
+  }
+
+  populateModalContent(data) {
+    // 제목과 기간 설정
+    if (this.modalTitle) this.modalTitle.textContent = data.title;
+    if (this.modalPeriod) this.modalPeriod.textContent = data.period;
+
+    // 콘텐츠 생성
+    if (this.modalContent) {
+      this.modalContent.innerHTML = `
+        <h3>프로젝트 개요</h3>
+        <p>${data.description}</p>
+        
+        <h3>주요 기능</h3>
+        <ul class="modal-features">
+          ${data.features.map(feature => `<li>${feature}</li>`).join('')}
+        </ul>
+        
+        <h3>기술 스택</h3>
+        <div class="modal-tech-stack">
+          ${data.techStack.map(tech => `<span class="modal-tech-tag">${tech}</span>`).join('')}
+        </div>
+        
+        ${data.achievements.length > 0 ? `
+          <div class="modal-achievements">
+            <h4>주요 성과</h4>
+            <ul>
+              ${data.achievements.map(achievement => `<li>${achievement}</li>`).join('')}
+            </ul>
+          </div>
+        ` : ''}
+      `;
+    }
+  }
+}
+
 // 클래스를 전역에서 사용할 수 있도록 등록
 window.PortfolioMain = PortfolioMain;
 window.PortfolioAnimations = PortfolioAnimations;
+window.ProjectModal = ProjectModal;
 
 // 자동 초기화는 component-loader.js에서 담당
 // Initialize main functionality when DOM is loaded
