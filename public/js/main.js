@@ -15,6 +15,7 @@ class PortfolioMain {
     this.setupContactForm();
     this.setupFloatingElements();
     this.setupParallaxEffects();
+    this.calculateCareerDuration();
   }
 
   setupElements() {
@@ -345,6 +346,45 @@ class PortfolioMain {
         element.style.transform = `translateY(${yPos}px)`;
       });
     }, { passive: true });
+  }
+
+  calculateCareerDuration() {
+    // 개발 시작일: 2020년 10월 1일
+    const startDate = new Date('2020-10-01');
+    const currentDate = new Date();
+    
+    // 경력 계산
+    let years = currentDate.getFullYear() - startDate.getFullYear();
+    let months = currentDate.getMonth() - startDate.getMonth();
+    
+    if (months < 0) {
+      years--;
+      months += 12;
+    }
+    
+    // 일수 확인하여 월 수 조정
+    if (currentDate.getDate() < startDate.getDate()) {
+      months--;
+      if (months < 0) {
+        years--;
+        months += 12;
+      }
+    }
+    
+    const durationText = years > 0 ? `${years}년 ${months}개월의 개발 여정` : `${months}개월의 개발 여정`;
+    const totalCareerText = years > 0 ? `${years}년 ${months}개월` : `${months}개월`;
+    
+    // DOM 업데이트
+    const careerDurationElement = document.getElementById('career-duration');
+    const totalCareerElement = document.getElementById('total-career');
+    
+    if (careerDurationElement) {
+      careerDurationElement.textContent = durationText;
+    }
+    
+    if (totalCareerElement) {
+      totalCareerElement.textContent = totalCareerText;
+    }
   }
 
   setupProjectCardEffects() {
