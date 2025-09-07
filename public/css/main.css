@@ -1504,6 +1504,22 @@
     display: none;
   }
   
+  /* 모바일에서 scroll-indicator 위치 조정 및 겹침 해결 */
+  .scroll-indicator {
+    bottom: var(--spacing-sm);
+    z-index: 10;
+    font-size: var(--font-size-xs);
+  }
+  
+  .scroll-text {
+    font-size: var(--font-size-xs);
+    margin-bottom: var(--spacing-xs);
+  }
+  
+  .scroll-arrow {
+    font-size: var(--font-size-base);
+  }
+  
   .section-title {
     font-size: var(--font-size-2xl);
   }
