@@ -74,7 +74,7 @@
 ```javascript
 const projectData = {
   'smartpod': {
-    title: '스마트팟 (SmartPot)',
+    title: '스마트팟 (SmartPod)',
     period: '2023.04 ~ 진행중',
     description: '실시간 데이터 로거 온도 집계 및 관제 시스템',
     features: [

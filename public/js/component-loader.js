@@ -511,4 +511,10 @@ document.addEventListener('componentLoaded', (event) => {
 document.addEventListener('allComponentsLoaded', () => {
   console.log('All components are ready!');
   // 여기에 모든 컴포넌트 로드 후 실행할 초기화 코드 작성
+  
+  // 프로젝트 모달 초기화
+  if (typeof ProjectModal !== 'undefined') {
+    window.projectModal = new ProjectModal();
+    console.log('Project modal initialized');
+  }
 });

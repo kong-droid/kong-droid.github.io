@@ -48,6 +48,20 @@
   <!-- Footer 컴포넌트 삽입 -->
   <div id="footer-placeholder"></div>
 
+  <!-- Project Modal -->
+  <div id="projectModal" class="project-modal hidden" role="dialog" aria-labelledby="modal-title" aria-describedby="modal-content">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h2 id="modal-title" class="modal-title"></h2>
+        <span class="modal-period"></span>
+        <button class="modal-close" aria-label="모달 닫기">&times;</button>
+      </div>
+      <div id="modal-content" class="modal-content">
+        <!-- 동적으로 콘텐츠 삽입 -->
+      </div>
+    </div>
+  </div>
+
   <!-- Scripts -->
   <script src="public/js/component-loader.js"></script>
   <script src="public/js/navigation.js"></script>
