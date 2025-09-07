@@ -165,7 +165,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     { path: 'views/cement/skills.html', target: '#skills-placeholder' },
     { path: 'views/cement/experience.html', target: '#experience-placeholder' },
     { path: 'views/cement/projects.html', target: '#projects-placeholder' },
-    { path: 'views/cement/contact.html', target: '#contact-placeholder' },
     { path: 'views/cement/footer.html', target: '#footer-placeholder' }
   ];
 

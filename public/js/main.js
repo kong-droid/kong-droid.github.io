@@ -12,7 +12,6 @@ class PortfolioMain {
     this.setupElements();
     this.initializeAnimations();
     this.setupSkillBars();
-    this.setupContactForm();
     this.setupFloatingElements();
     this.setupParallaxEffects();
   }
@@ -20,9 +19,6 @@ class PortfolioMain {
   setupElements() {
     // Skill bars
     this.skillBars = document.querySelectorAll('.skill-bar');
-    
-    // Contact form
-    this.contactForm = document.querySelector('.contact-form');
     
     // Floating elements
     this.floatingElements = document.querySelectorAll('.floating-item');
@@ -167,141 +163,6 @@ class PortfolioMain {
     }, 400);
   }
 
-  setupContactForm() {
-    if (!this.contactForm) return;
-
-    this.contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      this.handleContactFormSubmit();
-    });
-
-    // Real-time form validation
-    const inputs = this.contactForm.querySelectorAll('input, textarea');
-    inputs.forEach(input => {
-      input.addEventListener('blur', () => this.validateField(input));
-      input.addEventListener('input', () => this.clearFieldError(input));
-    });
-  }
-
-  handleContactFormSubmit() {
-    const formData = new FormData(this.contactForm);
-    const submitButton = this.contactForm.querySelector('button[type="submit"]');
-    
-    // Show loading state
-    submitButton.classList.add('loading');
-    submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> 전송 중...';
-    
-    // Simulate form submission (replace with actual endpoint)
-    setTimeout(() => {
-      this.showSuccessMessage();
-      submitButton.classList.remove('loading');
-      submitButton.innerHTML = '<i class="fas fa-check"></i> 전송 완료!';
-      
-      // Reset form after delay
-      setTimeout(() => {
-        this.contactForm.reset();
-        submitButton.innerHTML = '<i class="fas fa-paper-plane"></i> 메시지 보내기';
-      }, 2000);
-    }, 2000);
-  }
-
-  validateField(field) {
-    const value = field.value.trim();
-    const fieldName = field.getAttribute('name');
-    let isValid = true;
-    let errorMessage = '';
-
-    // Remove existing error
-    this.clearFieldError(field);
-
-    // Validation rules
-    switch (fieldName) {
-      case 'name':
-        if (!value) {
-          isValid = false;
-          errorMessage = '이름을 입력해주세요.';
-        } else if (value.length < 2) {
-          isValid = false;
-          errorMessage = '이름은 2글자 이상 입력해주세요.';
-        }
-        break;
-        
-      case 'email':
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!value) {
-          isValid = false;
-          errorMessage = '이메일을 입력해주세요.';
-        } else if (!emailRegex.test(value)) {
-          isValid = false;
-          errorMessage = '올바른 이메일 형식을 입력해주세요.';
-        }
-        break;
-        
-      case 'subject':
-        if (!value) {
-          isValid = false;
-          errorMessage = '제목을 입력해주세요.';
-        }
-        break;
-        
-      case 'message':
-        if (!value) {
-          isValid = false;
-          errorMessage = '메시지를 입력해주세요.';
-        } else if (value.length < 10) {
-          isValid = false;
-          errorMessage = '메시지는 10글자 이상 입력해주세요.';
-        }
-        break;
-    }
-
-    if (!isValid) {
-      this.showFieldError(field, errorMessage);
-    }
-
-    return isValid;
-  }
-
-  showFieldError(field, message) {
-    field.classList.add('error');
-    
-    const errorElement = document.createElement('span');
-    errorElement.className = 'field-error';
-    errorElement.textContent = message;
-    
-    field.parentNode.appendChild(errorElement);
-  }
-
-  clearFieldError(field) {
-    field.classList.remove('error');
-    
-    const existingError = field.parentNode.querySelector('.field-error');
-    if (existingError) {
-      existingError.remove();
-    }
-  }
-
-  showSuccessMessage() {
-    const notification = document.createElement('div');
-    notification.className = 'notification success';
-    notification.innerHTML = `
-      <i class="fas fa-check-circle"></i>
-      <span>메시지가 성공적으로 전송되었습니다!</span>
-    `;
-    
-    document.body.appendChild(notification);
-    
-    setTimeout(() => {
-      notification.classList.add('show');
-    }, 100);
-    
-    setTimeout(() => {
-      notification.classList.remove('show');
-      setTimeout(() => {
-        notification.remove();
-      }, 300);
-    }, 3000);
-  }
 
   setupFloatingElements() {
     if (this.floatingElements.length === 0) return;
