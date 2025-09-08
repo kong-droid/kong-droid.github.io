@@ -413,18 +413,26 @@ const projectData = {
     achievements: []
   },
   'dikidiki': {
-    title: '디키디키 (DDP 디키디키점)',
-    period: '2020.10 ~ 2021.12',
-    description: 'DDP 디키디키점 예약 및 소개 시스템',
+    title: '디키디키',
+    period: '2019.01 ~ 2021.12',
+    description: 'DDP에 위치한 어린이 놀이터로 티켓 예약, 이벤트 안내, 어린이 놀이 범위 리포트를 보여주는 웹 프로젝트입니다.',
     features: [
-      '매장 소개 및 메뉴 관리',
-      '테이블 예약 시스템',
-      '실시간 예약 현황 관리',
-      '고객 관리 및 알림 서비스',
-      '매출 및 통계 관리'
+      '웹사이트 개발 및 유지보수',
+      '티켓 예약 시스템 구현', 
+      '이벤트 관리 기능 개발',
+      '어린이 놀이 범위 리포트 시스템 구축',
+      'DDP 어린이 놀이터 전용 웹 서비스 제공',
+      '실시간 예약 현황 관리 시스템'
     ],
-    techStack: ['PHP', 'MySQL', 'JavaScript', 'HTML/CSS', 'jQuery'],
-    achievements: []
+    techStack: ['Java 8', 'JavaScript(ES5)', 'SQL', 'JSP', 'SpringFramework', 'MyBatis', 'JQuery', 'Linux', 'MariaDB'],
+    achievements: [
+      '팀 구성: 총 3명 (운영팀 2명, 개발팀 1명)',
+      '개인 기여도: 70%',
+      '웹사이트 URL: https://dikidiki.co.kr',
+      '약 3년간 안정적인 서비스 운영',
+      'DDP 어린이 놀이터의 디지털 서비스 혁신',
+      '티켓 예약부터 놀이 관리까지 원스톱 서비스 구현'
+    ]
   }
 };
 
