@@ -1,60 +1,119 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>힐링페스타 경주 2021 - 공미향 포트폴리오</title>
-    <link rel="stylesheet" href="../../public/css/common.css">
-    <link rel="stylesheet" href="../../public/css/main.css">
-</head>
-<body>
-    <header class="header">
-        <div class="container">
-            <div class="header-content">
-                <a href="../../index.html" class="logo">공미향</a>
-                <nav class="nav">
-                    <a href="../../index.html" class="nav-link">홈으로</a>
-                </nav>
-            </div>
+<!-- 힐링페스타 경주 2021 모달 콘텐츠 -->
+<div class="modal-content-section">
+    <!-- 기간 -->
+    <div class="project-period-section">
+        <h3>프로젝트 기간</h3>
+        <p class="project-period">2021.05 ~ 2021.11</p>
+    </div>
+    
+    <!-- 프로젝트 설명 -->
+    <div class="project-description-section">
+        <h3>프로젝트 개요</h3>
+        <p class="project-description">다양한 힐링 프로그램을 소개하고, 간편 오프라인 결제로 온라인 강의를 들을 수 있는 시스템</p>
+    </div>
+    
+    <!-- 기술 스택 -->
+    <div class="tech-stack-section">
+        <h3>기술 스택</h3>
+        <div class="modal-tech-stack">
+            <span class="modal-tech-tag">PHP</span>
+            <span class="modal-tech-tag">MySQL</span>
+            <span class="modal-tech-tag">JavaScript</span>
+            <span class="modal-tech-tag">HTML/CSS</span>
+            <span class="modal-tech-tag">Payment API</span>
         </div>
-    </header>
-
-    <main class="main-content">
-        <section class="project-detail section">
-            <div class="container">
-                <div class="project-detail-header">
-                    <h1 class="project-title">힐링페스타 경주 2021</h1>
-                    <p class="project-period">2021.05 ~ 2021.11</p>
-                </div>
-                
-                <div class="project-overview">
-                    <h2>프로젝트 개요</h2>
-                    <p>다양한 힐링 프로그램을 소개하고, 간편 오프라인 결제로 온라인 강의를 들을 수 있는 시스템</p>
-                    
-                    <h3>주요 기능</h3>
-                    <ul>
-                        <li>힐링 프로그램 소개 및 카탈로그</li>
-                        <li>온라인 강의 플랫폼</li>
-                        <li>오프라인 결제 시스템 연동</li>
-                        <li>사용자 학습 진도 관리</li>
-                        <li>강사-수강생 소통 기능</li>
-                    </ul>
-                    
-                    <h3>기술 스택</h3>
-                    <div class="tech-stack">
-                        <span class="tech-tag">PHP</span>
-                        <span class="tech-tag">MySQL</span>
-                        <span class="tech-tag">JavaScript</span>
-                        <span class="tech-tag">HTML/CSS</span>
-                        <span class="tech-tag">Payment API</span>
+    </div>
+    
+    <!-- 기여도 -->
+    <div class="contribution-section">
+        <h3>기여도</h3>
+        <p class="contribution">개인 프로젝트 (100%)</p>
+    </div>
+    
+    <!-- 프로젝트 경로 -->
+    <div class="project-url-section">
+        <h3>프로젝트 정보</h3>
+        <p class="project-url">이벤트 종료 (서비스 종료)</p>
+    </div>
+    
+    <!-- 인원 -->
+    <div class="team-size-section">
+        <h3>팀 구성</h3>
+        <p class="team-size">1명 (개인)</p>
+    </div>
+    
+    <!-- 프로젝트 이미지 슬라이드 -->
+    <div class="project-images-section">
+        <h3>프로젝트 이미지</h3>
+        <div class="project-image-slider">
+            <div class="slider-container">
+                <div class="slider-wrapper">
+                    <div class="slide active">
+                        <img src="public/images/projects/ezpmp/healingfesta-main.jpg" alt="힐링페스타 메인 화면" loading="lazy">
+                        <div class="slide-caption">힐링페스타 메인 페이지</div>
+                    </div>
+                    <div class="slide">
+                        <img src="public/images/projects/ezpmp/healingfesta-programs.jpg" alt="힐링페스타 프로그램" loading="lazy">
+                        <div class="slide-caption">힐링 프로그램 카탈로그</div>
+                    </div>
+                    <div class="slide">
+                        <img src="public/images/projects/ezpmp/healingfesta-lecture.jpg" alt="힐링페스타 강의" loading="lazy">
+                        <div class="slide-caption">온라인 강의 플랫폼</div>
                     </div>
                 </div>
-                
-                <div class="back-to-home">
-                    <a href="../../index.html#projects" class="btn btn-primary">프로젝트 목록으로</a>
-                </div>
+                <button class="slider-btn prev-btn" aria-label="이전 이미지">‹</button>
+                <button class="slider-btn next-btn" aria-label="다음 이미지">›</button>
             </div>
-        </section>
-    </main>
-</body>
-</html>
+            <div class="slider-progress">
+                <div class="progress-bar"></div>
+            </div>
+            <div class="slider-dots">
+                <button class="dot active" data-slide="0" aria-label="첫 번째 이미지"></button>
+                <button class="dot" data-slide="1" aria-label="두 번째 이미지"></button>
+                <button class="dot" data-slide="2" aria-label="세 번째 이미지"></button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 프로젝트 기술서 -->
+    <div class="project-details-section">
+        <h3>프로젝트 기술서</h3>
+        
+        <div class="main-tasks">
+            <h4>주요업무</h4>
+            <ul class="modal-features">
+                <li>힐링 프로그램 소개 및 카탈로그</li>
+                <li>온라인 강의 플랫폼</li>
+                <li>오프라인 결제 시스템 연동</li>
+                <li>사용자 학습 진도 관리</li>
+                <li>강사-수강생 소통 기능</li>
+            </ul>
+        </div>
+        
+        <div class="detailed-tasks">
+            <h4>상세 업무</h4>
+            <ul>
+                <li>PHP 기반 웹 애플리케이션 개발</li>
+                <li>MySQL 데이터베이스 설계 및 구현</li>
+                <li>결제 API 연동 (KCP, 이니시스)</li>
+                <li>온라인 강의 스트리밍 시스템 구축</li>
+                <li>사용자 인증 및 권한 관리 시스템</li>
+                <li>학습 진도율 추적 및 관리 기능</li>
+            </ul>
+        </div>
+        
+        <div class="modal-achievements">
+            <h4>성과</h4>
+            <ul>
+                <li>6개월간 성공적인 이벤트 운영</li>
+                <li>1,000여 명의 참가자 등록</li>
+                <li>안정적인 결제 시스템 운영 (오류율 0.5% 미만)</li>
+            </ul>
+        </div>
+        
+        <div class="lessons-learned">
+            <h4>느낀 점</h4>
+            <p>PHP와 MySQL을 활용한 웹 개발의 기초를 다지며, 결제 시스템과 같은 중요한 기능을 안정적으로 구현하는 경험을 했습니다. 특히 사용자 경험을 고려한 UI/UX 설계와 데이터베이스 최적화의 중요성을 배웠습니다.</p>
+        </div>
+    </div>
+</div>

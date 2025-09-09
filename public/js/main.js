@@ -356,84 +356,13 @@ const PortfolioAnimations = {
   }
 };
 
-// Project Modal Data
-const projectData = {
-  'smartpod': {
-    title: '스마트팟 (SmartPod)',
-    period: '2023.04 ~ 진행중',
-    description: '실시간으로 데이터 로거의 온도를 집계하고 레포트를 보여주는 관제 시스템',
-    features: [
-      '실시간 온도 데이터 수집 및 모니터링',
-      '데이터 시각화 및 리포팅 시스템',
-      '알림 및 경고 시스템',
-      '사용자 관리 및 권한 제어'
-    ],
-    techStack: ['Java', 'Spring Boot', 'PostgreSQL', 'AWS', 'Docker'],
-    achievements: ['RDS 비용 50% 절감', '조회속도 3초→0.5초 개선']
-  },
-  'gccell': {
-    title: 'GC CELL 중계 서버',
-    period: '2024.12 ~ 2025.03',
-    description: '실시간으로 데이터 로거의 온도를 집계해 GC CELL 서버에 온도 데이터를 전송하는 서버',
-    features: [
-      '다수의 데이터 로거로부터 실시간 온도 수집',
-      'GC CELL 서버와의 안정적인 통신',
-      '데이터 무결성 및 전송 오류 처리',
-      '시스템 모니터링 및 로그 관리'
-    ],
-    techStack: ['Kotlin', 'Spring Boot', 'PostgreSQL', 'AWS', 'REST API'],
-    achievements: []
-  },
-  'o2meet': {
-    title: '오투미트 (O2MEET)',
-    period: '2021.01 ~ 2023.02',
-    description: '모두가 행사를 편하게 만들고 개최하는 시스템',
-    features: [
-      '행사 생성 및 관리 플랫폼',
-      '참가자 등록 및 관리',
-      '결제 시스템 연동',
-      '행사 홍보 및 마케팅 도구',
-      '실시간 알림 및 소통 기능'
-    ],
-    techStack: ['Java', 'Spring Boot', 'MySQL', 'Thymeleaf', 'JavaScript'],
-    achievements: []
-  },
-  'healingfesta': {
-    title: '힐링페스타 경주 2021',
-    period: '2021.05 ~ 2021.11',
-    description: '다양한 힐링 프로그램을 소개하고, 간편 오프라인 결제로 온라인 강의를 들을 수 있는 시스템',
-    features: [
-      '힐링 프로그램 소개 및 카탈로그',
-      '온라인 강의 플랫폼',
-      '오프라인 결제 시스템 연동',
-      '사용자 학습 진도 관리',
-      '강사-수강생 소통 기능'
-    ],
-    techStack: ['PHP', 'MySQL', 'JavaScript', 'HTML/CSS', 'Payment API'],
-    achievements: []
-  },
-  'dikidiki': {
-    title: '디키디키',
-    period: '2019.01 ~ 2021.12',
-    description: 'DDP에 위치한 어린이 놀이터로 티켓 예약, 이벤트 안내, 어린이 놀이 범위 리포트를 보여주는 웹 프로젝트입니다.',
-    features: [
-      '웹사이트 개발 및 유지보수',
-      '티켓 예약 시스템 구현', 
-      '이벤트 관리 기능 개발',
-      '어린이 놀이 범위 리포트 시스템 구축',
-      'DDP 어린이 놀이터 전용 웹 서비스 제공',
-      '실시간 예약 현황 관리 시스템'
-    ],
-    techStack: ['Java 8', 'JavaScript(ES5)', 'SQL', 'JSP', 'SpringFramework', 'MyBatis', 'JQuery', 'Linux', 'MariaDB'],
-    achievements: [
-      '팀 구성: 총 3명 (운영팀 2명, 개발팀 1명)',
-      '개인 기여도: 70%',
-      '웹사이트 URL: https://dikidiki.co.kr',
-      '약 3년간 안정적인 서비스 운영',
-      'DDP 어린이 놀이터의 디지털 서비스 혁신',
-      '티켓 예약부터 놀이 관리까지 원스톱 서비스 구현'
-    ]
-  }
+// Project Modal HTML Path Mapping
+const projectHtmlPaths = {
+  'smartpod': 'views/thermolab/smartpod.html',
+  'gccell': 'views/thermolab/smartpod-gccell.html',
+  'o2meet': 'views/ezpmp/o2meet.html',
+  'healingfesta': 'views/ezpmp/healingfesta-2021.html',
+  'dikidiki': 'views/ezpmp/dikidiki.html'
 };
 
 // Project Modal Manager
@@ -500,14 +429,21 @@ class ProjectModal {
     });
   }
 
-  openModal(projectId) {
-    const data = projectData[projectId];
-    if (!data || !this.modal) return;
+  async openModal(projectId) {
+    if (!projectHtmlPaths[projectId] || !this.modal) {
+      console.error(`Project ID not found or modal not available: ${projectId}`);
+      return;
+    }
 
     this.lastFocusedElement = document.activeElement;
+    this.currentProjectId = projectId; // 현재 모달 ID 저장
     
-    // 모달 콘텐츠 생성
-    this.populateModalContent(data);
+    // HTML 콘텐츠 로드
+    const loadSuccess = await this.loadModalContentFromHtml(projectId);
+    if (!loadSuccess) {
+      console.error('Failed to load modal content');
+      return;
+    }
     
     // 모달 표시
     this.modal.classList.remove('hidden');
@@ -543,37 +479,488 @@ class ProjectModal {
     this.isOpen = false;
   }
 
-  populateModalContent(data) {
-    // 제목과 기간 설정
-    if (this.modalTitle) this.modalTitle.textContent = data.title;
-    if (this.modalPeriod) this.modalPeriod.textContent = data.period;
-
-    // 콘텐츠 생성
-    if (this.modalContent) {
-      this.modalContent.innerHTML = `
-        <h3>프로젝트 개요</h3>
-        <p>${data.description}</p>
-        
-        <h3>주요 기능</h3>
-        <ul class="modal-features">
-          ${data.features.map(feature => `<li>${feature}</li>`).join('')}
-        </ul>
-        
-        <h3>기술 스택</h3>
-        <div class="modal-tech-stack">
-          ${data.techStack.map(tech => `<span class="modal-tech-tag">${tech}</span>`).join('')}
-        </div>
-        
-        ${data.achievements.length > 0 ? `
-          <div class="modal-achievements">
-            <h4>주요 성과</h4>
-            <ul>
-              ${data.achievements.map(achievement => `<li>${achievement}</li>`).join('')}
-            </ul>
-          </div>
-        ` : ''}
-      `;
+  async loadModalContentFromHtml(projectId) {
+    const htmlPath = projectHtmlPaths[projectId];
+    if (!htmlPath) {
+      console.error(`No HTML path found for project: ${projectId}`);
+      return false;
     }
+
+    try {
+      const response = await fetch(htmlPath);
+      if (!response.ok) {
+        throw new Error(`Failed to load ${htmlPath}: ${response.statusText}`);
+      }
+      
+      const htmlContent = await response.text();
+      
+      // 모달 콘텐츠에 HTML 삽입
+      if (this.modalContent) {
+        this.modalContent.innerHTML = htmlContent;
+      }
+      
+      // HTML 콘텐츠에서 제목과 기간 추출하여 모달 헤더에 설정
+      this.extractAndSetModalHeader();
+      
+      return true;
+    } catch (error) {
+      console.error('Error loading modal content:', error);
+      return false;
+    }
+  }
+  
+  extractAndSetModalHeader() {
+    if (!this.modalContent) return;
+    
+    // HTML 콘텐츠에서 기간 추출
+    const periodElement = this.modalContent.querySelector('.project-period');
+    if (periodElement && this.modalPeriod) {
+      this.modalPeriod.textContent = periodElement.textContent;
+    }
+    
+    // 프로젝트 ID에 따른 제목 설정
+    const projectTitles = {
+      'smartpod': '스마트팟 (SmartPod)',
+      'gccell': 'GC CELL 중계 서버',
+      'o2meet': '오투미트 (O2MEET)',
+      'healingfesta': '힐링페스타 경주 2021',
+      'dikidiki': '디키디키 (DDP 어린이 놀이터)'
+    };
+    
+    // 현재 열린 모달의 프로젝트 ID 찾기
+    const activeProjectCard = document.querySelector('.project-card[data-project-id]');
+    if (activeProjectCard) {
+      const currentProjectId = this.currentProjectId; // 현재 열린 모달의 ID 저장
+      if (currentProjectId && projectTitles[currentProjectId] && this.modalTitle) {
+        this.modalTitle.textContent = projectTitles[currentProjectId];
+      }
+    }
+    
+    // 이미지 슬라이더 초기화
+    this.initializeImageSlider();
+  }
+  
+  initializeImageSlider() {
+    const sliders = this.modalContent?.querySelectorAll('.project-image-slider');
+    if (!sliders || sliders.length === 0) return;
+    
+    sliders.forEach(slider => {
+      this.setupSlider(slider);
+    });
+  }
+  
+  setupSlider(sliderElement) {
+    const slides = sliderElement.querySelectorAll('.slide');
+    const dots = sliderElement.querySelectorAll('.dot');
+    const prevBtn = sliderElement.querySelector('.prev-btn');
+    const nextBtn = sliderElement.querySelector('.next-btn');
+    const progressBar = sliderElement.querySelector('.progress-bar');
+    
+    if (!slides.length) return;
+    
+    let currentSlide = 0;
+    let isTransitioning = false;
+    
+    // 이미지 프리로딩
+    this.preloadImages(slides);
+    
+    const showSlide = (index) => {
+      if (isTransitioning || index < 0 || index >= slides.length) return;
+      
+      isTransitioning = true;
+      
+      try {
+        slides.forEach((slide, i) => {
+          slide.classList.toggle('active', i === index);
+        });
+        
+        dots.forEach((dot, i) => {
+          dot.classList.toggle('active', i === index);
+        });
+        
+        // 진행률 업데이트
+        if (progressBar) {
+          const progress = ((index + 1) / slides.length) * 100;
+          progressBar.style.width = `${progress}%`;
+        }
+        
+        // 다음/이전 이미지 프리로드
+        this.preloadAdjacentImages(slides, index);
+        
+      } catch (error) {
+        console.warn('Slide transition error:', error);
+      } finally {
+        // 전환 완료 후 플래그 리셋 (CSS 전환 시간과 동일)
+        setTimeout(() => {
+          isTransitioning = false;
+        }, 500);
+      }
+    };
+    
+    const nextSlide = () => {
+      if (isTransitioning) return;
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    };
+    
+    const prevSlide = () => {
+      if (isTransitioning) return;
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      showSlide(currentSlide);
+    };
+    
+    const goToSlide = (index) => {
+      if (isTransitioning || index === currentSlide) return;
+      currentSlide = index;
+      showSlide(currentSlide);
+    };
+    
+    // 이벤트 리스너 추가
+    nextBtn?.addEventListener('click', nextSlide);
+    prevBtn?.addEventListener('click', prevSlide);
+    
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => goToSlide(index));
+    });
+    
+    // 키보드 내비게이션
+    sliderElement.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') {
+        nextSlide();
+        e.preventDefault();
+      } else if (e.key === 'ArrowLeft') {
+        prevSlide();
+        e.preventDefault();
+      }
+    });
+    
+    // 터치/스와이프 지원
+    this.setupTouchEvents(sliderElement, { nextSlide, prevSlide });
+    
+    // 이미지 클릭 시 라이트박스 열기
+    this.setupLightboxEvents(sliderElement, slides);
+    
+    // 자동 슬라이드 (선택사항)
+    let autoSlideInterval;
+    
+    const startAutoSlide = () => {
+      autoSlideInterval = setInterval(nextSlide, 5000);
+    };
+    
+    const stopAutoSlide = () => {
+      if (autoSlideInterval) {
+        clearInterval(autoSlideInterval);
+      }
+    };
+    
+    // 마우스 호버 시 자동 슬라이드 일시정지
+    sliderElement.addEventListener('mouseenter', stopAutoSlide);
+    sliderElement.addEventListener('mouseleave', startAutoSlide);
+    
+    // 초기 자동 슬라이드 시작
+    startAutoSlide();
+    
+    // 초기 진행률 설정
+    if (progressBar) {
+      const progress = ((currentSlide + 1) / slides.length) * 100;
+      progressBar.style.width = `${progress}%`;
+    }
+    
+    // 모달이 닫힐 때 자동 슬라이드 정지
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+          const modal = mutation.target.closest('.project-modal');
+          if (modal && modal.classList.contains('hidden')) {
+            stopAutoSlide();
+          }
+        }
+      });
+    });
+    
+    observer.observe(document.body, {
+      attributes: true,
+      subtree: true,
+      attributeFilter: ['class']
+    });
+  }
+  
+  setupTouchEvents(element, { nextSlide, prevSlide }) {
+    let startX = 0;
+    let startY = 0;
+    let isDragging = false;
+    let startTime = 0;
+    
+    const minSwipeDistance = 50;
+    const maxSwipeTime = 300;
+    
+    // 터치 시작
+    const handleTouchStart = (e) => {
+      const touch = e.touches[0];
+      startX = touch.clientX;
+      startY = touch.clientY;
+      startTime = Date.now();
+      isDragging = true;
+      
+      // 자동 슬라이드 일시정지
+      element.dispatchEvent(new Event('mouseenter'));
+    };
+    
+    // 터치 이동
+    const handleTouchMove = (e) => {
+      if (!isDragging) return;
+      
+      const touch = e.touches[0];
+      const deltaX = touch.clientX - startX;
+      const deltaY = touch.clientY - startY;
+      
+      // 세로 스크롤 방지 (수평 스와이프가 더 클 때)
+      if (Math.abs(deltaX) > Math.abs(deltaY)) {
+        e.preventDefault();
+      }
+    };
+    
+    // 터치 종료
+    const handleTouchEnd = (e) => {
+      if (!isDragging) return;
+      
+      const touch = e.changedTouches[0];
+      const endX = touch.clientX;
+      const endY = touch.clientY;
+      const deltaX = endX - startX;
+      const deltaY = endY - startY;
+      const deltaTime = Date.now() - startTime;
+      
+      isDragging = false;
+      
+      // 스와이프 조건 확인
+      const isHorizontalSwipe = Math.abs(deltaX) > Math.abs(deltaY);
+      const isQuickSwipe = deltaTime < maxSwipeTime;
+      const isLongEnoughSwipe = Math.abs(deltaX) > minSwipeDistance;
+      
+      if (isHorizontalSwipe && isQuickSwipe && isLongEnoughSwipe) {
+        if (deltaX > 0) {
+          // 오른쪽으로 스와이프 = 이전 슬라이드
+          prevSlide();
+        } else {
+          // 왼쪽으로 스와이프 = 다음 슬라이드
+          nextSlide();
+        }
+      }
+      
+      // 자동 슬라이드 재시작
+      element.dispatchEvent(new Event('mouseleave'));
+    };
+    
+    // 이벤트 리스너 등록
+    element.addEventListener('touchstart', handleTouchStart, { passive: false });
+    element.addEventListener('touchmove', handleTouchMove, { passive: false });
+    element.addEventListener('touchend', handleTouchEnd, { passive: true });
+  }
+  
+  setupLightboxEvents(sliderElement, slides) {
+    slides.forEach((slide, index) => {
+      const img = slide.querySelector('img');
+      if (img) {
+        img.style.cursor = 'zoom-in';
+        img.addEventListener('click', (e) => {
+          e.stopPropagation();
+          this.openLightbox(slides, index);
+        });
+      }
+    });
+  }
+  
+  openLightbox(slides, currentIndex = 0) {
+    const lightbox = document.getElementById('imageLightbox');
+    const lightboxImage = document.getElementById('lightbox-image');
+    const lightboxCaption = document.getElementById('lightbox-caption');
+    const lightboxThumbnails = lightbox.querySelector('.lightbox-thumbnails');
+    const lightboxClose = lightbox.querySelector('.lightbox-close');
+    const lightboxPrev = lightbox.querySelector('.lightbox-prev');
+    const lightboxNext = lightbox.querySelector('.lightbox-next');
+    const lightboxOverlay = lightbox.querySelector('.lightbox-overlay');
+    
+    if (!lightbox) return;
+    
+    let currentLightboxIndex = currentIndex;
+    
+    // 썸네일 생성
+    lightboxThumbnails.innerHTML = '';
+    slides.forEach((slide, index) => {
+      const img = slide.querySelector('img');
+      if (img) {
+        const thumbnail = document.createElement('img');
+        thumbnail.src = img.src;
+        thumbnail.alt = img.alt;
+        thumbnail.className = `lightbox-thumbnail ${index === currentIndex ? 'active' : ''}`;
+        thumbnail.addEventListener('click', () => showLightboxSlide(index));
+        lightboxThumbnails.appendChild(thumbnail);
+      }
+    });
+    
+    const showLightboxSlide = (index) => {
+      const slide = slides[index];
+      const img = slide.querySelector('img');
+      const caption = slide.querySelector('.slide-caption');
+      
+      if (img) {
+        lightboxImage.src = img.src;
+        lightboxImage.alt = img.alt;
+        lightboxCaption.textContent = caption ? caption.textContent : img.alt;
+        
+        // 썸네일 활성화 업데이트
+        lightboxThumbnails.querySelectorAll('.lightbox-thumbnail').forEach((thumb, i) => {
+          thumb.classList.toggle('active', i === index);
+        });
+        
+        currentLightboxIndex = index;
+      }
+    };
+    
+    const nextLightboxSlide = () => {
+      const nextIndex = (currentLightboxIndex + 1) % slides.length;
+      showLightboxSlide(nextIndex);
+    };
+    
+    const prevLightboxSlide = () => {
+      const prevIndex = (currentLightboxIndex - 1 + slides.length) % slides.length;
+      showLightboxSlide(prevIndex);
+    };
+    
+    const closeLightbox = () => {
+      lightbox.classList.add('hidden');
+      document.body.style.overflow = '';
+      
+      // 이벤트 리스너 제거
+      lightboxClose.removeEventListener('click', closeLightbox);
+      lightboxPrev.removeEventListener('click', prevLightboxSlide);
+      lightboxNext.removeEventListener('click', nextLightboxSlide);
+      lightboxOverlay.removeEventListener('click', closeLightbox);
+      document.removeEventListener('keydown', handleLightboxKeydown);
+    };
+    
+    const handleLightboxKeydown = (e) => {
+      switch(e.key) {
+        case 'Escape':
+          closeLightbox();
+          break;
+        case 'ArrowRight':
+          nextLightboxSlide();
+          break;
+        case 'ArrowLeft':
+          prevLightboxSlide();
+          break;
+      }
+    };
+    
+    // 이벤트 리스너 등록
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightboxPrev.addEventListener('click', prevLightboxSlide);
+    lightboxNext.addEventListener('click', nextLightboxSlide);
+    lightboxOverlay.addEventListener('click', closeLightbox);
+    document.addEventListener('keydown', handleLightboxKeydown);
+    
+    // 터치 이벤트도 추가
+    this.setupTouchEvents(lightbox, { 
+      nextSlide: nextLightboxSlide, 
+      prevSlide: prevLightboxSlide 
+    });
+    
+    // 초기 슬라이드 표시
+    showLightboxSlide(currentIndex);
+    
+    // 라이트박스 열기
+    lightbox.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+  }
+  
+  // 이미지 프리로딩 메서드들
+  preloadImages(slides) {
+    // 첫 번째와 두 번째 이미지만 즉시 로드
+    const prioritySlides = Array.from(slides).slice(0, 2);
+    
+    prioritySlides.forEach(slide => {
+      const img = slide.querySelector('img');
+      if (img && !img.complete) {
+        this.loadImageWithFallback(img);
+      }
+    });
+    
+    // 나머지 이미지는 지연 로드
+    if (slides.length > 2) {
+      setTimeout(() => {
+        const remainingSlides = Array.from(slides).slice(2);
+        remainingSlides.forEach(slide => {
+          const img = slide.querySelector('img');
+          if (img && !img.complete) {
+            this.loadImageWithFallback(img);
+          }
+        });
+      }, 1000);
+    }
+  }
+  
+  preloadAdjacentImages(slides, currentIndex) {
+    const nextIndex = (currentIndex + 1) % slides.length;
+    const prevIndex = (currentIndex - 1 + slides.length) % slides.length;
+    
+    [nextIndex, prevIndex].forEach(index => {
+      const img = slides[index]?.querySelector('img');
+      if (img && !img.complete) {
+        this.loadImageWithFallback(img);
+      }
+    });
+  }
+  
+  loadImageWithFallback(img) {
+    return new Promise((resolve, reject) => {
+      // 이미 로드된 이미지인 경우
+      if (img.complete && img.naturalHeight !== 0) {
+        resolve(img);
+        return;
+      }
+      
+      const onLoad = () => {
+        img.removeEventListener('load', onLoad);
+        img.removeEventListener('error', onError);
+        img.classList.remove('loading');
+        resolve(img);
+      };
+      
+      const onError = () => {
+        img.removeEventListener('load', onLoad);
+        img.removeEventListener('error', onError);
+        img.classList.remove('loading');
+        
+        // 폴백 이미지 또는 placeholder 설정
+        this.setFallbackImage(img);
+        reject(new Error(`Failed to load image: ${img.src}`));
+      };
+      
+      img.addEventListener('load', onLoad);
+      img.addEventListener('error', onError);
+      img.classList.add('loading');
+      
+      // 이미지 로드 시작
+      if (!img.src) {
+        const dataSrc = img.getAttribute('data-src');
+        if (dataSrc) {
+          img.src = dataSrc;
+        }
+      }
+    });
+  }
+  
+  setFallbackImage(img) {
+    // 이미지 로드 실패 시 플레이스홀더 설정
+    const fallbackSrc = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjBmMGYwIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNiIgZmlsbD0iIzk5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPuydtOuvuOyngCDroZzrk5zsnpHsl4DrsLHsirXri4jri6Q8L3RleHQ+PC9zdmc+';
+    
+    img.src = fallbackSrc;
+    img.alt = img.alt || '이미지 로드 실패';
+    img.style.filter = 'grayscale(100%)';
+    
+    console.warn(`Image load failed: ${img.getAttribute('data-original-src') || img.src}`);
   }
 }
 

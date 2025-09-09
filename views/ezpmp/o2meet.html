@@ -1,60 +1,124 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>오투미트 (O2MEET) - 공미향 포트폴리오</title>
-    <link rel="stylesheet" href="../../public/css/common.css">
-    <link rel="stylesheet" href="../../public/css/main.css">
-</head>
-<body>
-    <header class="header">
-        <div class="container">
-            <div class="header-content">
-                <a href="../../index.html" class="logo">공미향</a>
-                <nav class="nav">
-                    <a href="../../index.html" class="nav-link">홈으로</a>
-                </nav>
-            </div>
+<!-- 오투미트 (O2MEET) 모달 콘텐츠 -->
+<div class="modal-content-section">
+    <!-- 기간 -->
+    <div class="project-period-section">
+        <h3>프로젝트 기간</h3>
+        <p class="project-period">2021.01 ~ 2023.02</p>
+    </div>
+    
+    <!-- 프로젝트 설명 -->
+    <div class="project-description-section">
+        <h3>프로젝트 개요</h3>
+        <p class="project-description">모두가 행사를 편하게 만들고 개최하는 시스템</p>
+    </div>
+    
+    <!-- 기술 스택 -->
+    <div class="tech-stack-section">
+        <h3>기술 스택</h3>
+        <div class="modal-tech-stack">
+            <span class="modal-tech-tag">Java</span>
+            <span class="modal-tech-tag">Spring Boot</span>
+            <span class="modal-tech-tag">MySQL</span>
+            <span class="modal-tech-tag">Thymeleaf</span>
+            <span class="modal-tech-tag">JavaScript</span>
         </div>
-    </header>
-
-    <main class="main-content">
-        <section class="project-detail section">
-            <div class="container">
-                <div class="project-detail-header">
-                    <h1 class="project-title">오투미트 (O2MEET)</h1>
-                    <p class="project-period">2021.01 ~ 2023.02</p>
-                </div>
-                
-                <div class="project-overview">
-                    <h2>프로젝트 개요</h2>
-                    <p>모두가 행사를 편하게 만들고 개최하는 시스템</p>
-                    
-                    <h3>주요 기능</h3>
-                    <ul>
-                        <li>행사 생성 및 관리 플랫폼</li>
-                        <li>참가자 등록 및 관리</li>
-                        <li>결제 시스템 연동</li>
-                        <li>행사 홍보 및 마케팅 도구</li>
-                        <li>실시간 알림 및 소통 기능</li>
-                    </ul>
-                    
-                    <h3>기술 스택</h3>
-                    <div class="tech-stack">
-                        <span class="tech-tag">Java</span>
-                        <span class="tech-tag">Spring Boot</span>
-                        <span class="tech-tag">MySQL</span>
-                        <span class="tech-tag">Thymeleaf</span>
-                        <span class="tech-tag">JavaScript</span>
+    </div>
+    
+    <!-- 기여도 -->
+    <div class="contribution-section">
+        <h3>기여도</h3>
+        <p class="contribution">개발팀 구성원 (80%)</p>
+    </div>
+    
+    <!-- 프로젝트 경로 -->
+    <div class="project-url-section">
+        <h3>프로젝트 정보</h3>
+        <p class="project-url">서비스 종료</p>
+    </div>
+    
+    <!-- 인원 -->
+    <div class="team-size-section">
+        <h3>팀 구성</h3>
+        <p class="team-size">5명 (기획 2명, 개발 2명, 디자인 1명)</p>
+    </div>
+    
+    <!-- 프로젝트 이미지 슬라이드 -->
+    <div class="project-images-section">
+        <h3>프로젝트 이미지</h3>
+        <div class="project-image-slider">
+            <div class="slider-container">
+                <div class="slider-wrapper">
+                    <div class="slide active">
+                        <img src="public/images/projects/ezpmp/o2meet-main.jpg" alt="오투미트 메인 화면" loading="lazy">
+                        <div class="slide-caption">서비스 메인 페이지</div>
+                    </div>
+                    <div class="slide">
+                        <img src="public/images/projects/ezpmp/o2meet-event-create.jpg" alt="오투미트 행사생성" loading="lazy">
+                        <div class="slide-caption">행사 생성 및 관리</div>
+                    </div>
+                    <div class="slide">
+                        <img src="public/images/projects/ezpmp/o2meet-dashboard.jpg" alt="오투미트 대시보드" loading="lazy">
+                        <div class="slide-caption">관리자 대시보드</div>
+                    </div>
+                    <div class="slide">
+                        <img src="public/images/projects/ezpmp/o2meet-mobile.jpg" alt="오투미트 모바일" loading="lazy">
+                        <div class="slide-caption">모바일 반응형 화면</div>
                     </div>
                 </div>
-                
-                <div class="back-to-home">
-                    <a href="../../index.html#projects" class="btn btn-primary">프로젝트 목록으로</a>
-                </div>
+                <button class="slider-btn prev-btn" aria-label="이전 이미지">‹</button>
+                <button class="slider-btn next-btn" aria-label="다음 이미지">›</button>
             </div>
-        </section>
-    </main>
-</body>
-</html>
+            <div class="slider-progress">
+                <div class="progress-bar"></div>
+            </div>
+            <div class="slider-dots">
+                <button class="dot active" data-slide="0" aria-label="첫 번째 이미지"></button>
+                <button class="dot" data-slide="1" aria-label="두 번째 이미지"></button>
+                <button class="dot" data-slide="2" aria-label="세 번째 이미지"></button>
+                <button class="dot" data-slide="3" aria-label="네 번째 이미지"></button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 프로젝트 기술서 -->
+    <div class="project-details-section">
+        <h3>프로젝트 기술서</h3>
+        
+        <div class="main-tasks">
+            <h4>주요업무</h4>
+            <ul class="modal-features">
+                <li>행사 생성 및 관리 플랫폼</li>
+                <li>참가자 등록 및 관리</li>
+                <li>결제 시스템 연동</li>
+                <li>행사 홍보 및 마케팅 도구</li>
+                <li>실시간 알림 및 소통 기능</li>
+            </ul>
+        </div>
+        
+        <div class="detailed-tasks">
+            <h4>상세 업무</h4>
+            <ul>
+                <li>Spring Boot 기반 RESTful API 서버 개발</li>
+                <li>MySQL 데이터베이스 설계 및 최적화</li>
+                <li>Thymeleaf를 활용한 동적 웹 페이지 개발</li>
+                <li>PG사 결제 모듈 연동 (KG이니시스, 토스페이먼츠)</li>
+                <li>행사 관리 및 참가자 관리 시스템 구축</li>
+                <li>실시간 알림 기능 (WebSocket 활용)</li>
+            </ul>
+        </div>
+        
+        <div class="modal-achievements">
+            <h4>성과</h4>
+            <ul>
+                <li>2년간 안정적인 서비스 운영</li>
+                <li>월평균 500여 개의 행사 생성</li>
+                <li>누적 사용자 10,000명 돌파</li>
+            </ul>
+        </div>
+        
+        <div class="lessons-learned">
+            <h4>느낀 점</h4>
+            <p>팀 프로젝트에서 백엔드 개발을 담당하며 프론트엔드 팀원들과의 협업과 API 설계의 중요성을 배웠습니다. 특히 결제 시스템과 같은 민감한 기능을 다루며 보안과 안정성에 대한 깊은 이해를 얻을 수 있었습니다.</p>
+        </div>
+    </div>
+</div>

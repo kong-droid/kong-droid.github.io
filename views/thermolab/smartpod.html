@@ -27,25 +27,125 @@
                     <p class="project-period">2023.04 ~ 진행중</p>
                 </div>
                 
-                <div class="project-overview">
-                    <h2>프로젝트 개요</h2>
-                    <p>실시간으로 데이터 로거의 온도를 집계하고 레포트를 보여주는 관제 시스템</p>
+                <div class="modal-content-section">
+                    <!-- 기간 -->
+                    <div class="project-period-section">
+                        <h3>프로젝트 기간</h3>
+                        <p class="project-period">2023.04 ~ 진행중</p>
+                    </div>
                     
-                    <h3>주요 기능</h3>
-                    <ul>
-                        <li>실시간 온도 데이터 수집 및 모니터링</li>
-                        <li>데이터 시각화 및 리포팅 시스템</li>
-                        <li>알림 및 경고 시스템</li>
-                        <li>사용자 관리 및 권한 제어</li>
-                    </ul>
+                    <!-- 프로젝트 설명 -->
+                    <div class="project-description-section">
+                        <h3>프로젝트 개요</h3>
+                        <p class="project-description">실시간으로 데이터 로거의 온도를 집계하고 레포트를 보여주는 관제 시스템</p>
+                    </div>
                     
-                    <h3>기술 스택</h3>
-                    <div class="tech-stack">
-                        <span class="tech-tag">Java</span>
-                        <span class="tech-tag">Spring Boot</span>
-                        <span class="tech-tag">PostgreSQL</span>
-                        <span class="tech-tag">AWS</span>
-                        <span class="tech-tag">Docker</span>
+                    <!-- 기술 스택 -->
+                    <div class="tech-stack-section">
+                        <h3>기술 스택</h3>
+                        <div class="modal-tech-stack">
+                            <span class="modal-tech-tag">Java</span>
+                            <span class="modal-tech-tag">Spring Boot</span>
+                            <span class="modal-tech-tag">PostgreSQL</span>
+                            <span class="modal-tech-tag">AWS</span>
+                            <span class="modal-tech-tag">Docker</span>
+                        </div>
+                    </div>
+                    
+                    <!-- 기여도 -->
+                    <div class="contribution-section">
+                        <h3>기여도</h3>
+                        <p class="contribution">개인 프로젝트 (100%)</p>
+                    </div>
+                    
+                    <!-- 프로젝트 경로 -->
+                    <div class="project-url-section">
+                        <h3>프로젝트 정보</h3>
+                        <p class="project-url">내부 시스템 (비공개)</p>
+                    </div>
+                    
+                    <!-- 인원 -->
+                    <div class="team-size-section">
+                        <h3>팀 구성</h3>
+                        <p class="team-size">1명 (개인)</p>
+                    </div>
+                    
+                    <!-- 프로젝트 이미지 슬라이드 -->
+                    <div class="project-images-section">
+                        <h3>프로젝트 이미지</h3>
+                        <div class="project-image-slider">
+                            <div class="slider-container">
+                                <div class="slider-wrapper">
+                                    <div class="slide active">
+                                        <img src="public/images/projects/thermolab/smartpod-dashboard.jpg" alt="스마트팟 대시보드" loading="lazy">
+                                        <div class="slide-caption">대시보드 메인 화면</div>
+                                    </div>
+                                    <div class="slide">
+                                        <img src="public/images/projects/thermolab/smartpod-monitoring.jpg" alt="스마트팟 모니터링" loading="lazy">
+                                        <div class="slide-caption">실시간 데이터 모니터링</div>
+                                    </div>
+                                    <div class="slide">
+                                        <img src="public/images/projects/thermolab/smartpod-reports.jpg" alt="스마트팟 리포트" loading="lazy">
+                                        <div class="slide-caption">데이터 분석 리포트</div>
+                                    </div>
+                                    <div class="slide">
+                                        <img src="public/images/projects/thermolab/smartpod-alerts.jpg" alt="스마트팟 알림" loading="lazy">
+                                        <div class="slide-caption">알림 및 경고 시스템</div>
+                                    </div>
+                                </div>
+                                <button class="slider-btn prev-btn" aria-label="이전 이미지">‹</button>
+                                <button class="slider-btn next-btn" aria-label="다음 이미지">›</button>
+                            </div>
+                            <div class="slider-progress">
+                                <div class="progress-bar"></div>
+                            </div>
+                            <div class="slider-dots">
+                                <button class="dot active" data-slide="0" aria-label="첫 번째 이미지"></button>
+                                <button class="dot" data-slide="1" aria-label="두 번째 이미지"></button>
+                                <button class="dot" data-slide="2" aria-label="세 번째 이미지"></button>
+                                <button class="dot" data-slide="3" aria-label="네 번째 이미지"></button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 프로젝트 기술서 -->
+                    <div class="project-details-section">
+                        <h3>프로젝트 기술서</h3>
+                        
+                        <div class="main-tasks">
+                            <h4>주요업무</h4>
+                            <ul class="modal-features">
+                                <li>실시간 온도 데이터 수집 및 모니터링</li>
+                                <li>데이터 시각화 및 리포팅 시스템</li>
+                                <li>알림 및 경고 시스템</li>
+                                <li>사용자 관리 및 권한 제어</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="detailed-tasks">
+                            <h4>상세 업무</h4>
+                            <ul>
+                                <li>데이터 로거와의 실시간 통신 인터페이스 구현</li>
+                                <li>PostgreSQL 데이터베이스 설계 및 최적화</li>
+                                <li>Spring Boot 기반 RESTful API 개발</li>
+                                <li>AWS 인프라 구성 및 Docker 컨테이너화</li>
+                                <li>실시간 알림 시스템 구축</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="modal-achievements">
+                            <h4>성과</h4>
+                            <ul>
+                                <li>RDS 비용 50% 절감</li>
+                                <li>조회속도 3초→0.5초 개선</li>
+                                <li>24/7 무중단 모니터링 시스템 구축</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="lessons-learned">
+                            <h4>느낀 점</h4>
+                            <p>실시간 데이터 처리와 AWS 인프라 최적화를 통해 성능과 비용 효율성을 동시에 달성할 수 있었습니다. 특히 데이터베이스 쿼리 최적화의 중요성을 깊이 이해하게 되었습니다.</p>
+                        </div>
                     </div>
                 </div>
                 
