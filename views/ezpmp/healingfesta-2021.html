@@ -1,64 +1,46 @@
-<!-- 힐링페스타 경주 2021 모달 콘텐츠 -->
 <div class="modal-content-section">
-    <!-- 기간 -->
     <div class="project-period-section">
-        <h3>프로젝트 기간</h3>
+        <h3>기간</h3>
         <p class="project-period">2021.05 ~ 2021.11</p>
     </div>
     
-    <!-- 프로젝트 설명 -->
     <div class="project-description-section">
-        <h3>프로젝트 개요</h3>
-        <p class="project-description">다양한 힐링 프로그램을 소개하고, 간편 오프라인 결제로 온라인 강의를 들을 수 있는 시스템</p>
+        <h3>설명</h3>
+        <p class="project-description">경주에서 즐기는 몸과 마음의 면역을 키우는 축제를 목표로 요가, 필라테스, 싱잉볼과 같은 오프라인 강의를 온라인으로 예매하는 웹 프로젝트</p>
     </div>
-    
-    <!-- 기술 스택 -->
+
     <div class="tech-stack-section">
         <h3>기술 스택</h3>
         <div class="modal-tech-stack">
-            <span class="modal-tech-tag">PHP</span>
-            <span class="modal-tech-tag">MySQL</span>
-            <span class="modal-tech-tag">JavaScript</span>
-            <span class="modal-tech-tag">HTML/CSS</span>
-            <span class="modal-tech-tag">Payment API</span>
+            <span class="modal-tech-tag">Java Script(ES6)</span>
+            <span class="modal-tech-tag">React.js</span>
+            <span class="modal-tech-tag">Recoil.js</span>
         </div>
     </div>
     
-    <!-- 기여도 -->
     <div class="contribution-section">
         <h3>기여도</h3>
-        <p class="contribution">개인 프로젝트 (100%)</p>
+        <p class="contribution">20%</p>
     </div>
-    
-    <!-- 프로젝트 경로 -->
+
     <div class="project-url-section">
-        <h3>프로젝트 정보</h3>
-        <p class="project-url">이벤트 종료 (서비스 종료)</p>
+        <h3>URL</h3>
+        <p class="project-url">서비스 종료</p>
     </div>
     
-    <!-- 인원 -->
     <div class="team-size-section">
-        <h3>팀 구성</h3>
-        <p class="team-size">1명 (개인)</p>
+        <h3>인원</h3>
+        <p class="team-size">4명(기획 2명, 프론트엔드 2명)</p>
     </div>
     
-    <!-- 프로젝트 이미지 슬라이드 -->
     <div class="project-images-section">
-        <h3>프로젝트 이미지</h3>
+        <h3>이미지</h3>
         <div class="project-image-slider">
             <div class="slider-container">
                 <div class="slider-wrapper">
                     <div class="slide active">
-                        <img src="public/images/projects/ezpmp/healingfesta-main.jpg" alt="힐링페스타 메인 화면" loading="lazy">
-                        <div class="slide-caption">힐링페스타 메인 페이지</div>
-                    </div>
-                    <div class="slide">
-                        <img src="public/images/projects/ezpmp/healingfesta-programs.jpg" alt="힐링페스타 프로그램" loading="lazy">
-                        <div class="slide-caption">힐링 프로그램 카탈로그</div>
-                    </div>
-                    <div class="slide">
-                        <img src="public/images/projects/ezpmp/healingfesta-lecture.jpg" alt="힐링페스타 강의" loading="lazy">
-                        <div class="slide-caption">온라인 강의 플랫폼</div>
+                        <img src="public/images/projects/ezpmp/healingfesta2021/screenshot1.jpg" alt="힐링페스타 2021 포스터" loading="lazy">
+                        <div class="slide-caption">힐링페스타 2021 포스터</div>
                     </div>
                 </div>
                 <button class="slider-btn prev-btn" aria-label="이전 이미지">‹</button>
@@ -69,51 +51,72 @@
             </div>
             <div class="slider-dots">
                 <button class="dot active" data-slide="0" aria-label="첫 번째 이미지"></button>
-                <button class="dot" data-slide="1" aria-label="두 번째 이미지"></button>
-                <button class="dot" data-slide="2" aria-label="세 번째 이미지"></button>
             </div>
         </div>
     </div>
     
-    <!-- 프로젝트 기술서 -->
     <div class="project-details-section">
         <h3>프로젝트 기술서</h3>
         
         <div class="main-tasks">
             <h4>주요업무</h4>
             <ul class="modal-features">
-                <li>힐링 프로그램 소개 및 카탈로그</li>
-                <li>온라인 강의 플랫폼</li>
-                <li>오프라인 결제 시스템 연동</li>
-                <li>사용자 학습 진도 관리</li>
-                <li>강사-수강생 소통 기능</li>
+                <li>비동기 통신을 활용해 오투미트 API 통신 후 로그인, 회원가입, 게시판, 설문 기능 데이터 호출 및 화면 제작</li>
+                <li>모바일 결제 모듈 제작</li>
+                <li>테스트 및 디버깅</li>
             </ul>
         </div>
         
         <div class="detailed-tasks">
             <h4>상세 업무</h4>
             <ul>
-                <li>PHP 기반 웹 애플리케이션 개발</li>
-                <li>MySQL 데이터베이스 설계 및 구현</li>
-                <li>결제 API 연동 (KCP, 이니시스)</li>
-                <li>온라인 강의 스트리밍 시스템 구축</li>
-                <li>사용자 인증 및 권한 관리 시스템</li>
-                <li>학습 진도율 추적 및 관리 기능</li>
+                <li>
+                    회원가입
+                    <ul>
+                        <li>정규표현식을 활용해 아이디, 이메일, 비밀번호와 같은 필수값 검증 기능 제작</li>
+                        <li>오투미트 문자 인증 API와 통신해 이메일 본인 인증 기능 제작</li>
+                    </ul>
+                </li>
+                <li>
+                    로그인
+                    <ul>
+                        <li> localStorage 내 로그인 토큰을 저장하고 서버 측과 통신해 로그인 유지 기능 제작</li>
+                    </ul>
+                </li>
+                <li>
+                    게시판
+                    <ul>
+                        <li>관리자 웹 게시글 작성/수정/삭제 : 오투미트 게시글 관리 API와 통신 및 recoil.js를 활용해 게시 목록, 게시글 인덱스 별 상태 값을 관리함</li>
+                        <li>사용자 웹 : 게시판별 게시글 목록 조회 기능 제작</li>
+                        <li>오투미트 파일 첨부 API와 통신해 게시글 별 파일 첨부 기능 제작</li>
+                    </ul>
+                </li>
+                <li>
+                    설문
+                    <ul>
+                        <li>관리자 웹 설문 작성/수정/삭제 : 오투미트 설문 관리 API와 통신 및 recoil.js를 활용해 게시 목록, 게시글 인덱스 별 상태 값을 관리함</li>
+                        <li>관리자 웹 설문 결과 작성/수정/삭제 : 오투미트 설문 관리 API와 통신을 통해 설문 점수 범위를 지정</li>
+                    </ul>
+                </li>
             </ul>
         </div>
         
         <div class="modal-achievements">
             <h4>성과</h4>
             <ul>
-                <li>6개월간 성공적인 이벤트 운영</li>
-                <li>1,000여 명의 참가자 등록</li>
-                <li>안정적인 결제 시스템 운영 (오류율 0.5% 미만)</li>
+                <li>관리자 웹의 게시판, 설문, 회원 정보 조회 기능 완성</li>
+                <li>사용자가 모바일에서 강의 결제 및 취소를 오류 없이 원활하게 진행함</li>
             </ul>
         </div>
         
         <div class="lessons-learned">
             <h4>느낀 점</h4>
-            <p>PHP와 MySQL을 활용한 웹 개발의 기초를 다지며, 결제 시스템과 같은 중요한 기능을 안정적으로 구현하는 경험을 했습니다. 특히 사용자 경험을 고려한 UI/UX 설계와 데이터베이스 최적화의 중요성을 배웠습니다.</p>
+            <p>
+                처음으로 React와 결제 모듈을 구현해 본 프로젝트였습니다.
+                <br/>오투미트 API를 활용해 웹을 제작하면서 비동기 통신의 개념과 ES6 문법을 익힐 수 있었고, 결제 기능을 처음 구현하던 당시, 비동기 통신을 사용하면서 '동일 출처 정책(Same-Origin Policy)' 문제에 부딪히기도 했습니다.
+                <br/>그 과정에서 ‘여러 프로젝트에서 재사용하기 쉬운 방식으로 만들 수는 없을까?’라는 아이디어가 떠올랐고, 하나의 결제 모듈로 결제의 시작과 끝을 마무리하고 웹에서는 결제 결과만 표시하도록 구성했을 때의 짜릿함은 아직도 생생하게 기억납니다.
+                <br/>시나리오를 직접 구성하고 개발을 마친 뒤, 여러 번의 테스트를 거쳐 실제 운영 환경에서 결제가 오류 없이 원활하게 이루어졌을 때, 처음으로 저 자신에게 개발자로서의 가능성을 본 것 같습니다.
+            </p>
         </div>
     </div>
 </div>
