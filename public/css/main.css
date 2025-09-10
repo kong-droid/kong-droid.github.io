@@ -1222,6 +1222,62 @@
     height: 250px;
   }
   
+  /* 태블릿용 슬라이더 높이 추가 */
+  .slider-wrapper {
+    height: 45vw;  /* 화면 너비의 45% */
+    max-height: 380px;
+    min-height: 300px;
+  }
+  
+  /* 태블릿 전용 dot 스타일 추가 */
+  .dot {
+    width: 9px !important;
+    height: 9px !important;
+    border-width: 1.5px !important;
+    border-radius: 50% !important;
+    /* button 요소 flex item 고정 */
+    flex-shrink: 0 !important;
+    flex-grow: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+  }
+  
+  .dot:hover {
+    transform: scale(1.1) !important;
+  }
+  
+  .dot.active {
+    transform: scale(1.2) !important;
+  }
+  
+  .dot.active::after {
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    border-width: 1.5px;
+  }
+  
+  .slider-dots {
+    gap: var(--spacing-xs);
+    padding: var(--spacing-md) 0 0;
+    /* 태블릿에서 컸테이너 크기 제한 */
+    max-width: 150px;
+    margin: 0 auto;
+    width: fit-content;
+  }
+  
+  /* 태블릿에서는 프로그레스바 표시 */
+  .slider-progress {
+    display: block !important;
+  }
+  
+  /* 태블릿에서는 도트 숨김 */
+  .slider-dots {
+    display: none !important;
+  }
+  
   .skills-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1881,6 +1937,9 @@
   position: relative;
   max-width: 100%;
   margin: 0 auto;
+  /* 모달 내부에서도 최대 크기 제한 */
+  width: 100%;
+  max-width: 600px; /* 모달 내부 최적 크기로 제한 */
 }
 
 .slider-container {
@@ -1993,6 +2052,8 @@
   height: 4px;
   background: rgba(255, 255, 255, 0.3);
   overflow: hidden;
+  /* 데스크톱에서는 숨김 */
+  display: none;
 }
 
 .progress-bar {
@@ -2023,12 +2084,22 @@
   100% { left: 100%; }
 }
 
-/* 슬라이더 도트 */
+/* 기본 (데스크톱): 도트 표시, 프로그레스바 숨김 */
 .slider-dots {
   display: flex;
   justify-content: center;
   gap: var(--spacing-sm);
   padding: var(--spacing-lg) 0 0;
+  /* 🔥 강력한 컨테이너 크기 고정 - 절대 늘어나지 않음 */
+  width: 120px !important;  /* 고정 너비 - dot 4개 + gap 기준 */
+  max-width: 120px !important;
+  min-width: 120px !important;
+  margin: 0 auto !important;
+  /* flex 자체도 완전 고정 */
+  flex-shrink: 0 !important;
+  flex-grow: 0 !important;
+  flex-basis: 120px !important;
+  align-self: center;
 }
 
 .dot {
@@ -2040,6 +2111,13 @@
   cursor: pointer;
   transition: all 0.3s ease;
   position: relative;
+  /* button 요소 초기화 및 flex item 고정 */
+  flex-shrink: 0;  /* flex container에서 줄어들지 않음 */
+  flex-grow: 0;    /* flex container에서 늘어나지 않음 */
+  padding: 0;      /* button 기본 padding 제거 */
+  margin: 0;       /* button 기본 margin 제거 */
+  outline: none;   /* 포커스 아웃라인 제거 */
+  box-sizing: border-box;  /* 명시적 box-sizing */
 }
 
 .dot:hover {
@@ -2107,8 +2185,19 @@
     font-size: var(--font-size-sm);
   }
   
+  /* 모바일에서는 도트 숨김, 프로그레스바 표시 */
+  .slider-dots {
+    display: none !important;
+  }
+  
+  .slider-progress {
+    display: block !important;
+  }
+  
   .slider-wrapper {
-    height: 280px;
+    height: 50vw;  /* 화면 너비의 50% */
+    max-height: 350px;
+    min-height: 250px;
   }
   
   .slider-btn {
@@ -2133,7 +2222,9 @@
 
 @media (max-width: 480px) {
   .slider-wrapper {
-    height: 220px;
+    height: 55vw;  /* 화면 너비의 55% */
+    max-height: 280px;
+    min-height: 220px;
   }
   
   .slider-btn {
@@ -2155,6 +2246,12 @@
     height: 8px !important;
     border-width: 1px !important;
     border-radius: 50% !important;
+    /* button 요소 flex item 고정 */
+    flex-shrink: 0 !important;
+    flex-grow: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
   }
   
   .dot:hover {
@@ -2177,9 +2274,14 @@
     font-size: var(--font-size-xs);
   }
   
+  /* 모바일에서는 도트 숨김 - 필요없음 */
   .slider-dots {
-    gap: var(--spacing-xs);
-    padding: var(--spacing-md) 0 0;
+    display: none !important;
+  }
+  
+  /* 모바일에서 프로그레스바 표시 */
+  .slider-progress {
+    display: block !important;
   }
 }
 
@@ -2190,6 +2292,12 @@
     height: 6px !important;
     border-width: 1px !important;
     border-radius: 50% !important;
+    /* button 요소 flex item 고정 */
+    flex-shrink: 0 !important;
+    flex-grow: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
   }
   
   .dot:hover {
@@ -2208,9 +2316,14 @@
     border-width: 1px;
   }
   
+  /* 초소형 모바일에서도 도트 숨김 */
   .slider-dots {
-    gap: 4px;
-    padding: var(--spacing-sm) 0 0;
+    display: none !important;
+  }
+  
+  /* 초소형 모바일에서 프로그레스바 표시 */
+  .slider-progress {
+    display: block !important;
   }
 }
 
