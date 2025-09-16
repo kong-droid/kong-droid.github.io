@@ -1864,6 +1864,51 @@
   margin: 0;
 }
 
+/* 모든 URL 섹션에 통일된 리스트 스타일 적용 */
+.project-url-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.project-url-section li {
+  margin-bottom: var(--spacing-sm);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background: rgba(var(--color-primary-rgb), 0.05);
+  border-radius: 6px;
+  border-left: 3px solid var(--color-primary);
+  transition: all 0.3s ease;
+}
+
+.project-url-section li:hover {
+  background: rgba(var(--color-primary-rgb), 0.08);
+  transform: translateX(2px);
+}
+
+.project-url-section li:last-child {
+  margin-bottom: 0;
+}
+
+.project-url-section li .project-url {
+  display: block;
+  margin-top: 4px;
+  color: var(--color-secondary);
+  text-decoration: none;
+  word-break: break-all;
+  font-weight: var(--font-weight-medium);
+}
+
+.project-url-section li a.project-url:hover {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+/* 서비스 종료용 span 스타일 */
+.project-url-section li span.project-url {
+  color: var(--color-text-light);
+  font-style: italic;
+}
+
 .modal-features {
   list-style: none;
   padding: 0;

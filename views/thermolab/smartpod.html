@@ -1,159 +1,161 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>스마트팟 (SmartPod) - 공미향 포트폴리오</title>
-    <link rel="stylesheet" href="../../public/css/common.css">
-    <link rel="stylesheet" href="../../public/css/main.css">
-</head>
-<body>
-    <header class="header">
-        <div class="container">
-            <div class="header-content">
-                <a href="../../index.html" class="logo">공미향</a>
-                <nav class="nav">
-                    <a href="../../index.html" class="nav-link">홈으로</a>
-                </nav>
+<div class="modal-content-section">
+    <div class="project-period-section">
+        <h3>기간</h3>
+        <p class="project-period">2023.04 ~ </p>
+    </div>
+
+    <div class="project-description-section">
+        <h3>설명</h3>
+        <p class="project-description">실시간 데이터 로거 위치 및 온도 추적을 지원하고 레포트를 제공하는 서비스</p>
+    </div>
+
+    <div class="tech-stack-section">
+        <h3>기술 스택</h3>
+        <div class="modal-tech-stack">
+            <span class="modal-tech-tag">Java 11</span>
+            <span class="modal-tech-tag">Java Script(ES6)</span>
+            <span class="modal-tech-tag">SQL</span>
+            <span class="modal-tech-tag">Spring Boot</span>
+            <span class="modal-tech-tag">JPA</span>
+            <span class="modal-tech-tag">Gradle</span>
+            <span class="modal-tech-tag">Node.js</span>
+            <span class="modal-tech-tag">PostgreSQL</span>
+            <span class="modal-tech-tag">Linux</span>
+            <span class="modal-tech-tag">AWS</span>
+            <span class="modal-tech-tag">Github Actions</span>
+        </div>
+    </div>
+
+    <div class="contribution-section">
+        <h3>기여도</h3>
+        <p class="contribution">50%</p>
+    </div>
+
+    <div class="project-url-section">
+        <h3>URL</h3>
+        <ul>
+            <li>
+                스마트팟 안드로이드 애플리케이션
+                <a class="project-url" href="https://play.google.com/store/apps/details?id=com.tlksys.belogger" target="_blank">
+                    https://play.google.com/store/apps/details?id=com.tlksys.belogger
+                </a>
+            </li>
+            <li>
+                스마트팟 웹 클라우드
+                <a class="project-url" href="https://cloud.smartpod.co.kr" target="_blank">
+                    https://cloud.smartpod.co.kr
+                </a>
+            </li>
+            <li>
+                스마트팟 고객사 거래처
+                <a class="project-url" href="https://paper.smartpod.co.kr" target="_blank">
+                    https://paper.smartpod.co.kr
+                </a>
+            </li>
+        </ul>
+
+    </div>
+
+    <div class="team-size-section">
+        <h3>인원</h3>
+        <p class="team-size">2명 (백엔드 2명)</p>
+    </div>
+
+    <div class="project-images-section">
+        <h3>프로젝트 이미지</h3>
+        <div class="project-image-slider">
+            <div class="slider-container">
+                <div class="slider-wrapper">
+                    <div class="slide active">
+                        <img src="public/images/projects/tlksys/gccell/screenshot1.png" alt="모니터링 모드 1" loading="lazy">
+                        <div class="slide-caption">모니터링 시작 전 화면</div>
+                    </div>
+                    <div class="slide">
+                        <img src="public/images/projects/tlksys/gccell/screenshot1.png" alt="모니터링 모드 2" loading="lazy">
+                        <div class="slide-caption">모니터링 시작 - 데이터로거 블루투스 스캔</div>
+                    </div>
+                    <div class="slide">
+                        <img src="public/images/projects/tlksys/gccell/screenshot3.png" alt="모니터링 모드 3" loading="lazy">
+                        <div class="slide-caption">모니터링 시작 - 데이터로거 블루투스 스캔 데이터 실시간 전송</div>
+                    </div>
+                    <div class="slide">
+                        <img src="public/images/projects/tlksys/gccell/screenshot4.png" alt="모니터링 모드 3" loading="lazy">
+                        <div class="slide-caption">데이터 로거 온도 이탈 알림 FCM 데이터 전송</div>
+                    </div>
+                </div>
+                <button class="slider-btn prev-btn" aria-label="이전 이미지">‹</button>
+                <button class="slider-btn next-btn" aria-label="다음 이미지">›</button>
+            </div>
+            <div class="slider-progress">
+                <div class="progress-bar"></div>
+            </div>
+            <div class="slider-dots">
+                <button class="dot active" data-slide="0" aria-label="첫 번째 이미지"></button>
+                <button class="dot" data-slide="1" aria-label="두 번째 이미지"></button>
+                <button class="dot" data-slide="2" aria-label="세 번째 이미지"></button>
+                <button class="dot" data-slide="3" aria-label="네 번째 이미지"></button>
             </div>
         </div>
-    </header>
+    </div>
 
-    <main class="main-content">
-        <section class="project-detail section">
-            <div class="container">
-                <div class="project-detail-header">
-                    <h1 class="project-title">스마트팟 (SmartPod)</h1>
-                    <p class="project-period">2023.04 ~ 진행중</p>
-                </div>
-                
-                <div class="modal-content-section">
-                    <!-- 기간 -->
-                    <div class="project-period-section">
-                        <h3>프로젝트 기간</h3>
-                        <p class="project-period">2023.04 ~ 진행중</p>
-                    </div>
-                    
-                    <!-- 프로젝트 설명 -->
-                    <div class="project-description-section">
-                        <h3>프로젝트 개요</h3>
-                        <p class="project-description">실시간으로 데이터 로거의 온도를 집계하고 레포트를 보여주는 관제 시스템</p>
-                    </div>
-                    
-                    <!-- 기술 스택 -->
-                    <div class="tech-stack-section">
-                        <h3>기술 스택</h3>
-                        <div class="modal-tech-stack">
-                            <span class="modal-tech-tag">Java</span>
-                            <span class="modal-tech-tag">Spring Boot</span>
-                            <span class="modal-tech-tag">PostgreSQL</span>
-                            <span class="modal-tech-tag">AWS</span>
-                            <span class="modal-tech-tag">Docker</span>
-                        </div>
-                    </div>
-                    
-                    <!-- 기여도 -->
-                    <div class="contribution-section">
-                        <h3>기여도</h3>
-                        <p class="contribution">개인 프로젝트 (100%)</p>
-                    </div>
-                    
-                    <!-- 프로젝트 경로 -->
-                    <div class="project-url-section">
-                        <h3>프로젝트 정보</h3>
-                        <p class="project-url">내부 시스템 (비공개)</p>
-                    </div>
-                    
-                    <!-- 인원 -->
-                    <div class="team-size-section">
-                        <h3>팀 구성</h3>
-                        <p class="team-size">1명 (개인)</p>
-                    </div>
-                    
-                    <!-- 프로젝트 이미지 슬라이드 -->
-                    <div class="project-images-section">
-                        <h3>프로젝트 이미지</h3>
-                        <div class="project-image-slider">
-                            <div class="slider-container">
-                                <div class="slider-wrapper">
-                                    <div class="slide active">
-                                        <img src="public/images/projects/thermolab/smartpod-dashboard.jpg" alt="스마트팟 대시보드" loading="lazy">
-                                        <div class="slide-caption">대시보드 메인 화면</div>
-                                    </div>
-                                    <div class="slide">
-                                        <img src="public/images/projects/thermolab/smartpod-monitoring.jpg" alt="스마트팟 모니터링" loading="lazy">
-                                        <div class="slide-caption">실시간 데이터 모니터링</div>
-                                    </div>
-                                    <div class="slide">
-                                        <img src="public/images/projects/thermolab/smartpod-reports.jpg" alt="스마트팟 리포트" loading="lazy">
-                                        <div class="slide-caption">데이터 분석 리포트</div>
-                                    </div>
-                                    <div class="slide">
-                                        <img src="public/images/projects/thermolab/smartpod-alerts.jpg" alt="스마트팟 알림" loading="lazy">
-                                        <div class="slide-caption">알림 및 경고 시스템</div>
-                                    </div>
-                                </div>
-                                <button class="slider-btn prev-btn" aria-label="이전 이미지">‹</button>
-                                <button class="slider-btn next-btn" aria-label="다음 이미지">›</button>
-                            </div>
-                            <div class="slider-progress">
-                                <div class="progress-bar"></div>
-                            </div>
-                            <div class="slider-dots">
-                                <button class="dot active" data-slide="0" aria-label="첫 번째 이미지"></button>
-                                <button class="dot" data-slide="1" aria-label="두 번째 이미지"></button>
-                                <button class="dot" data-slide="2" aria-label="세 번째 이미지"></button>
-                                <button class="dot" data-slide="3" aria-label="네 번째 이미지"></button>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- 프로젝트 기술서 -->
-                    <div class="project-details-section">
-                        <h3>프로젝트 기술서</h3>
-                        
-                        <div class="main-tasks">
-                            <h4>주요업무</h4>
-                            <ul class="modal-features">
-                                <li>실시간 온도 데이터 수집 및 모니터링</li>
-                                <li>데이터 시각화 및 리포팅 시스템</li>
-                                <li>알림 및 경고 시스템</li>
-                                <li>사용자 관리 및 권한 제어</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="detailed-tasks">
-                            <h4>상세 업무</h4>
-                            <ul>
-                                <li>데이터 로거와의 실시간 통신 인터페이스 구현</li>
-                                <li>PostgreSQL 데이터베이스 설계 및 최적화</li>
-                                <li>Spring Boot 기반 RESTful API 개발</li>
-                                <li>AWS 인프라 구성 및 Docker 컨테이너화</li>
-                                <li>실시간 알림 시스템 구축</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="modal-achievements">
-                            <h4>성과</h4>
-                            <ul>
-                                <li>RDS 비용 50% 절감</li>
-                                <li>조회속도 3초→0.5초 개선</li>
-                                <li>24/7 무중단 모니터링 시스템 구축</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="lessons-learned">
-                            <h4>느낀 점</h4>
-                            <p>실시간 데이터 처리와 AWS 인프라 최적화를 통해 성능과 비용 효율성을 동시에 달성할 수 있었습니다. 특히 데이터베이스 쿼리 최적화의 중요성을 깊이 이해하게 되었습니다.</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="back-to-home">
-                    <a href="../../index.html#projects" class="btn btn-primary">프로젝트 목록으로</a>
-                </div>
-            </div>
-        </section>
-    </main>
-</body>
-</html>
+    <div class="project-details-section">
+        <h3>프로젝트 기술서</h3>
+
+        <div class="main-tasks">
+            <h4>주요업무</h4>
+            <ul class="modal-features">
+                <li>DBMS 설계</li>
+                <li>Spring Boot 기반 RESTful API 서버 개발</li>
+                <li>WebClient 클래스를 활용해 GC CELL API 연동 및 데이터 매핑</li>
+                <li>AWS 인프라 구성 및 모니터링 시스템 구축</li>
+            </ul>
+        </div>
+
+        <div class="detailed-tasks">
+            <h4>상세 업무</h4>
+            <ul>
+                <li>
+                    DBMS 설계 및 개발 문서 작성
+                    <ul>
+                        <li>테이블 설계 및 정의서, DDL 개발 문서 작성</li>
+                    </ul>
+                </li>
+                <li>AWS 서비스 기반 서버 구축 및 운영</li>
+                <li>
+                    서버 무중단 배포
+                    <ul>
+                        <li>Nginx Port Forwarding 설계</li>
+                        <li>Github Actions 기반 브랜치 기준 배포 설계 및 구축</li>
+                    </ul>
+                </li>
+                <li>
+                    GC CELL 전용 API 기능 제작
+                    <ul>
+                        <li>데이터 로거의 실시간 온도를 전달받아 GC CELL 서버에 전달할 데이터를 가공 후 WebClient 클래스를 통한 비동기 방식으로 데이터 전송 기능 제작</li>
+                        <li>데이터 로거의 온도 집계 완료 후 데이터를 전달받아 GC CELL 서버에 전달할 데이터를 가공 후 rWebClient 클래스를 통한 비동기 방식으로 데이터 전송 기능 제작</li>
+                        <li>Node.js 런타임 및 node-cron 라이브러리를 활용하여 매일 자정에 전일 데이터 전송 이력을 조회하고 누락된 데이터를 선별하여 집계 완료된 온도 데이터를 전송하는 스케줄러 서버 제작</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="modal-achievements">
+            <h4>성과</h4>
+            <ul>
+                <li>실시간 데이터 중계 시스템 구축 - 데이터 전송 오류 <strong>0.1%</strong> 미만 달성</li>
+                <li>첫 대형 고객사 유치 및 데이터 로거 <strong>220대</strong> 판매 기여</li>
+            </ul>
+        </div>
+
+        <div class="lessons-learned">
+            <h4>느낀 점</h4>
+            <p>
+                처음에는 로그 레벨을 낮춘 상태로 전송 테스트를 진행했기 때문에 중계 서버로의 데이터 전송 누락 문제를 인지하지 못했습니다.
+                <br>베타 테스트 기간이 얼마 지나지 않아 고객사 개발팀과 협업하면서 일부 온도 데이터가 100% 전송되지 않고 누락되는 문제를 발견하게 되었습니다.
+                <br>에러 현상을 재현하기 위해 화이트 박스 테스트와 블랙 박스 테스트를 병행해 진행한 결과, 스마트팟 서버에서 중계 서버로 동기 통신 방식으로 데이터를 전송한 뒤 고객사 서버로 전송할 때 타임아웃 오류가 발생한다는 점을 확인할 수 있었습니다.
+                <br>분석 결과 '스마트팟 서버가 중계 서버로 데이터를 반드시 전송해야 하지만, 응답값은 필요하지 않다'는 특성을 고려해 webClient 클래스를 활용해 중계 서버에 온도 데이터를 전송했습니다.
+                <br>에러 수정 후 운영 서버를 구축하고 배포한 결과, 고객사 서버에 에러 없이 온도 데이터가 정상적으로 전송되는 것을 확인할 수 있었으며, 언제나 오류는 발견되지만 원인 분석을 위해 여러 방면에서 생각한다면 수정할 수 있다를 깨달았습니다.
+            </p>
+        </div>
+    </div>
+</div>
