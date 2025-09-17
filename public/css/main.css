@@ -242,6 +242,7 @@
   color: var(--color-secondary);
   box-shadow: var(--shadow-md);
   animation: float 4s ease-in-out infinite;
+  z-index: 5;
 }
 
 .floating-item:nth-child(1) {
@@ -278,6 +279,7 @@
   color: var(--color-text-light);
   cursor: pointer;
   transition: all var(--transition-medium);
+  z-index: 20;
 }
 
 .scroll-indicator:hover {
