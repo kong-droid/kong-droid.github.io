@@ -160,12 +160,17 @@
   display: flex;
   gap: var(--spacing-md);
   flex-wrap: wrap;
+  justify-content: flex-start;
 }
 
 .hero-actions .btn {
   padding: var(--spacing-md) var(--spacing-xl);
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-medium);
+}
+
+.hero-btn-icon {
+  margin-right: var(--spacing-sm);
 }
 
 /* Hero Image */
@@ -1212,7 +1217,11 @@
     gap: var(--spacing-2xl);
     text-align: center;
   }
-  
+
+  .hero-actions {
+    justify-content: center;
+  }
+
   .hero-stats {
     justify-content: center;
   }
@@ -1356,11 +1365,6 @@
   
   .hero-actions {
     justify-content: center;
-  }
-  
-  .hero-actions .btn {
-    flex: 1;
-    min-width: 150px;
   }
   
   .profile-image-container {
