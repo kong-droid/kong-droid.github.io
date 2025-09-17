@@ -118,6 +118,26 @@
         </div>
     </div>
 
+    <div class="infrastructure-section">
+        <h3>인프라 구조도</h3>
+        <div class="infrastructure-diagram">
+            <img src="public/images/projects/tlksys/smartpod/infrastructure-diagram.png" alt="스마트팟 서버 구성도" loading="lazy">
+            <div class="diagram-description">
+                <p>스마트팟 시스템은 AWS 클라우드 기반으로 구축되어 있습니다.</p>
+                <br>
+                <strong>주요 구성 요소:</strong>
+                <br>• <strong>AWS IoT Core:</strong> 데이터 로거 디바이스와 안전한 MQTT 통신
+                <br>• <strong>Lambda:</strong> 실시간 데이터 처리 및 변환
+                <br>• <strong>EC2 + ELB:</strong> Spring Boot 기반 API 서버 (로드 밸런싱)
+                <br>• <strong>RDS (PostgreSQL):</strong> 메인 데이터베이스
+                <br>• <strong>S3 + CloudFront:</strong> 정적 파일 저장 및 CDN
+                <br>• <strong>Route53 + ACM:</strong> 도메인 관리 및 SSL 인증서
+                <br>• <strong>CloudWatch:</strong> 시스템 모니터링 및 로깅
+                <br>• <strong>GitHub Actions:</strong> CI/CD 파이프라인 (무중단 배포)
+            </div>
+        </div>
+    </div>
+
     <div class="project-details-section">
         <h3>프로젝트 기술서</h3>
 

@@ -1978,6 +1978,38 @@
   margin: var(--spacing-xl) 0;
 }
 
+/* Infrastructure Section */
+.infrastructure-section {
+  margin: var(--spacing-xl) 0;
+}
+
+.infrastructure-diagram {
+  text-align: center;
+  margin: var(--spacing-lg) 0;
+}
+
+.infrastructure-diagram img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-medium);
+}
+
+.infrastructure-diagram img:hover {
+  transform: scale(1.02);
+}
+
+.diagram-description {
+  margin-top: var(--spacing-md);
+  padding: var(--spacing-md);
+  background-color: var(--color-bg-secondary);
+  border-radius: var(--border-radius-md);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-light);
+  line-height: 1.6;
+}
+
 .project-image-slider {
   position: relative;
   max-width: 100%;
@@ -2262,6 +2294,12 @@
   .slide-caption {
     font-size: var(--font-size-sm);
     padding: var(--spacing-lg) var(--spacing-md) var(--spacing-md);
+  }
+
+  /* Infrastructure Section - Mobile */
+  .diagram-description {
+    padding: var(--spacing-sm);
+    font-size: var(--font-size-xs);
   }
 }
 
