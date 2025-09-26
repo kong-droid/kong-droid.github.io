@@ -1292,6 +1292,27 @@
   .skills-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+}
+
+/* Desktop specific styles for 2x2 skills grid */
+@media (min-width: 1025px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: var(--spacing-2xl);
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .skill-category {
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .skills-list {
+    flex-grow: 1;
+  }
   
   .timeline::before {
     left: 30px;
