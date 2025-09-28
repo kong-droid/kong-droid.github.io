@@ -152,16 +152,31 @@ class PortfolioMain {
   }
 
   animateTimelineItem(item) {
+    if (!item) return;
+
     const marker = item.querySelector('.timeline-marker');
     const content = item.querySelector('.timeline-content');
-    
-    setTimeout(() => {
-      marker.classList.add('pulse');
-    }, 200);
-    
-    setTimeout(() => {
-      content.classList.add('slide-in');
-    }, 400);
+
+    // 카루셀에서는 현재 활성 아이템만 애니메이션
+    if (!item.classList.contains('active')) return;
+
+    if (marker) {
+      setTimeout(() => {
+        marker.style.transform = 'scale(1.1)';
+        setTimeout(() => {
+          marker.style.transform = 'scale(1)';
+        }, 300);
+      }, 200);
+    }
+
+    if (content) {
+      setTimeout(() => {
+        content.style.transform = 'translateY(-3px)';
+        setTimeout(() => {
+          content.style.transform = 'translateY(0)';
+        }, 200);
+      }, 400);
+    }
   }
 
 
