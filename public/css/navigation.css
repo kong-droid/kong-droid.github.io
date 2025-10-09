@@ -108,6 +108,10 @@
   width: 80%;
 }
 
+.nav-icon {
+  margin-right: var(--spacing-sm);
+}
+
 /* Hamburger Menu Button */
 .hamburger {
   display: none;
