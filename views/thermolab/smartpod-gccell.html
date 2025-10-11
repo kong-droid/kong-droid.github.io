@@ -45,7 +45,17 @@
         <h3>인원</h3>
         <p class="team-size">2명 (백엔드 2명)</p>
     </div>
-    
+
+    <div class="infrastructure-section">
+        <h3>인프라 구조도</h3>
+        <div class="infrastructure-diagram">
+            <img src="public/images/projects/tlksys/smartpod/infrastructure.png"
+                 alt="스마트팟 서버 구성도"
+                 loading="lazy"
+                 class="infrastructure-image">
+        </div>
+    </div>
+
     <div class="project-images-section">
         <h3>프로젝트 이미지</h3>
         <div class="project-image-slider">
@@ -79,26 +89,6 @@
                 <button class="dot" data-slide="1" aria-label="두 번째 이미지"></button>
                 <button class="dot" data-slide="2" aria-label="세 번째 이미지"></button>
                 <button class="dot" data-slide="3" aria-label="네 번째 이미지"></button>
-            </div>
-        </div>
-    </div>
-
-    <div class="infrastructure-section">
-        <h3>인프라 구조도</h3>
-        <div class="infrastructure-diagram">
-            <img src="public/images/projects/tlksys/gccell/infrastructure-diagram.png" alt="스마트팟 GC Cell 시스템 구성도" loading="lazy">
-            <div class="diagram-description">
-                <p>스마트팟 GC Cell 프로젝트는 실시간 온도 데이터 중계 시스템입니다.</p>
-                <br>
-                <strong>시스템 구성:</strong>
-                <br>• <strong>중계 서버 (EC2):</strong> Spring Boot 기반 데이터 변환 및 전송 API
-                <br>• <strong>RDS (PostgreSQL):</strong> 온도 데이터 및 전송 이력 저장
-                <br>• <strong>WebClient:</strong> 비동기 통신으로 GC Cell 서버에 데이터 전송
-                <br>• <strong>Node.js 스케줄러:</strong> 매일 자정 누락 데이터 재전송
-                <br>• <strong>GitHub Actions:</strong> 자동화된 배포 파이프라인
-                <br>• <strong>CloudWatch:</strong> 시스템 모니터링 및 에러 로깅
-                <br><br>
-                <strong>데이터 흐름:</strong> 스마트팟 서버 → 중계 서버 → GC Cell 서버
             </div>
         </div>
     </div>

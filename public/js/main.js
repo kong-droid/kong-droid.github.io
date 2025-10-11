@@ -471,7 +471,8 @@ class ProjectModal {
     setTimeout(() => {
       this.modalClose?.focus();
     }, 300);
-    
+
+
     this.isOpen = true;
   }
 

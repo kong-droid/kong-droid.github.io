@@ -2038,16 +2038,6 @@
   transform: scale(1.02);
 }
 
-.diagram-description {
-  margin-top: var(--spacing-md);
-  padding: var(--spacing-md);
-  background-color: var(--color-bg-secondary);
-  border-radius: var(--border-radius-md);
-  font-size: var(--font-size-sm);
-  color: var(--color-text-light);
-  line-height: 1.6;
-}
-
 .project-image-slider {
   position: relative;
   max-width: 100%;
@@ -2335,10 +2325,6 @@
   }
 
   /* Infrastructure Section - Mobile */
-  .diagram-description {
-    padding: var(--spacing-sm);
-    font-size: var(--font-size-xs);
-  }
 }
 
 @media (max-width: 480px) {
@@ -2685,3 +2671,4 @@
     height: 30px;
   }
 }
+
