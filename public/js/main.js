@@ -442,6 +442,13 @@ class ProjectModal {
     this.modalContainer?.addEventListener('click', (e) => {
       e.stopPropagation();
     });
+
+    // 언어 변경 시 모달이 열려있으면 제목 재번역
+    window.addEventListener('languageChanged', () => {
+      if (this.isOpen && this.currentProjectId && this.modalTitle && window.i18n) {
+        this.modalTitle.textContent = window.i18n.t(`projects.${this.currentProjectId}.name`);
+      }
+    });
   }
 
   async openModal(projectId) {
@@ -517,7 +524,12 @@ class ProjectModal {
       
       // HTML 콘텐츠에서 제목과 기간 추출하여 모달 헤더에 설정
       this.extractAndSetModalHeader();
-      
+
+      // i18n 번역 적용
+      if (window.i18n) {
+        window.i18n.translatePage();
+      }
+
       return true;
     } catch (error) {
       console.error('Error loading modal content:', error);
@@ -546,9 +558,11 @@ class ProjectModal {
     // 현재 열린 모달의 프로젝트 ID 찾기
     const activeProjectCard = document.querySelector('.project-card[data-project-id]');
     if (activeProjectCard) {
-      const currentProjectId = this.currentProjectId; // 현재 열린 모달의 ID 저장
-      if (currentProjectId && projectTitles[currentProjectId] && this.modalTitle) {
-        this.modalTitle.textContent = projectTitles[currentProjectId];
+      const currentProjectId = this.currentProjectId;
+      if (currentProjectId && this.modalTitle) {
+        this.modalTitle.textContent = window.i18n
+          ? window.i18n.t(`projects.${currentProjectId}.name`)
+          : (projectTitles[currentProjectId] || '');
       }
     }
     
