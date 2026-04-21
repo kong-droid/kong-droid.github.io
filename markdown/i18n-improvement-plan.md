@@ -1,17 +1,17 @@
 # 포트폴리오 사이트 다국어 지원 개선안
 
 ## 개요
-한국과 일본 취업 시장을 타겟으로 한국어(KR)와 일본어(JP) 간 언어 전환 기능을 구현합니다.
+한국, 일본, 글로벌 취업 시장을 타겟으로 한국어(KR), 일본어(JP), 영어(EN) 간 언어 전환 기능을 구현합니다.
 
 ---
 
 ## 1. 요구사항 분석
 
 ### 기능 요구사항
-- ✅ 한국어 ↔ 일본어 실시간 전환
+- ✅ 한국어 ↔ 일본어 ↔ 영어 실시간 전환
 - ✅ 사용자 선택 언어 브라우저 저장 (localStorage)
 - ✅ 초기 로드 시 브라우저 언어 감지 및 자동 설정
-- ✅ URL 파라미터를 통한 언어 지정 가능 (`?lang=jp`)
+- ✅ URL 파라미터를 통한 언어 지정 가능 (`?lang=jp`, `?lang=en`)
 - ✅ SEO 최적화 (lang 속성, hreflang 태그)
 
 ### 비기능 요구사항
@@ -32,6 +32,7 @@ public/
 ├── i18n/
 │   ├── ko.json          # 한국어 번역
 │   ├── ja.json          # 일본어 번역
+│   ├── en.json          # 영어 번역
 │   └── i18n.js          # 번역 엔진
 ```
 
@@ -85,8 +86,9 @@ kong-droid.github.io/
 ├── index.html
 ├── public/
 │   ├── i18n/
-│   │   ├── kr.json              # 한국어 번역 데이터
-│   │   ├── jp.json              # 일본어 번역 데이터
+│   │   ├── ko.json              # 한국어 번역 데이터
+│   │   ├── ja.json              # 일본어 번역 데이터
+│   │   ├── en.json              # 영어 번역 데이터
 │   │   └── i18n.js              # 번역 엔진 + 언어 전환 로직
 │   ├── js/
 │   │   ├── component-loader.js  # (수정) i18n 통합
@@ -127,7 +129,7 @@ kong-droid.github.io/
 }
 ```
 
-**jp.json 예시:**
+**ja.json 예시:**
 ```json
 {
   "nav": {
@@ -142,6 +144,30 @@ kong-droid.github.io/
     "name": "コン・ミヒャン",
     "title": "バックエンド開発者",
     "subtitle": "シナリオベース問題解決の専門家"
+  }
+  // ...
+}
+```
+
+**en.json 예시:**
+```json
+{
+  "nav": {
+    "about": "About",
+    "skills": "Skills",
+    "experience": "Experience",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "name": "Kong Mi-hyang",
+    "title": "Backend Developer",
+    "subtitle": "Specialist in Scenario-Based Problem Solving"
+  },
+  "about": {
+    "title": "About",
+    "description": "I'm a backend developer who..."
   }
   // ...
 }
@@ -172,6 +198,9 @@ kong-droid.github.io/
   <button id="lang-ja" class="lang-btn" data-lang="ja">
     <span class="flag">🇯🇵</span> JA
   </button>
+  <button id="lang-en" class="lang-btn" data-lang="en">
+    <span class="flag">🇺🇸</span> EN
+  </button>
 </div>
 ```
 
@@ -192,18 +221,19 @@ class I18n {
   detectLanguage() {
     const urlParams = new URLSearchParams(window.location.search);
     const urlLang = urlParams.get('lang');
-    if (urlLang && ['kr', 'jp'].includes(urlLang)) {
+    if (urlLang && ['ko', 'ja', 'en'].includes(urlLang)) {
       return urlLang;
     }
 
     const storedLang = localStorage.getItem('preferredLang');
-    if (storedLang && ['kr', 'jp'].includes(storedLang)) {
+    if (storedLang && ['ko', 'ja', 'en'].includes(storedLang)) {
       return storedLang;
     }
 
     const browserLang = navigator.language.toLowerCase();
-    if (browserLang.startsWith('jp')) return 'ja';
-    return 'kr';
+    if (browserLang.startsWith('ja')) return 'ja';
+    if (browserLang.startsWith('en')) return 'en';
+    return 'ko';
   }
 
   // 번역 파일 로드
@@ -264,7 +294,7 @@ class I18n {
 
   // 언어 변경
   async changeLanguage(lang) {
-    if (!['kr', 'jp'].includes(lang)) {
+    if (!['ko', 'ja', 'en'].includes(lang)) {
       console.error('Unsupported language:', lang);
       return;
     }
@@ -353,6 +383,7 @@ async function initializePortfolioAfterComponents() {
   <!-- 대체 언어 페이지 힌트 -->
   <link rel="alternate" hreflang="ko" href="https://kong-droid.github.io/?lang=ko" />
   <link rel="alternate" hreflang="ja" href="https://kong-droid.github.io/?lang=ja" />
+  <link rel="alternate" hreflang="en" href="https://kong-droid.github.io/?lang=en" />
   <link rel="alternate" hreflang="x-default" href="https://kong-droid.github.io/" />
 
   <!-- OG 태그도 동적 변경 가능하도록 data-i18n 속성 추가 -->
@@ -419,13 +450,18 @@ async function initializePortfolioAfterComponents() {
 }
 
 /* 일본어 폰트 최적화 */
-html[lang="jp"] {
+html[lang="ja"] {
   font-family: 'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', sans-serif;
 }
 
 /* 일본어일 때 줄 간격 조정 */
-html[lang="jp"] body {
+html[lang="ja"] body {
   line-height: 1.8;
+}
+
+/* 영어 폰트 최적화 */
+html[lang="en"] {
+  font-family: 'Inter', 'Roboto', 'Noto Sans', sans-serif;
 }
 ```
 
@@ -439,10 +475,11 @@ html[lang="jp"] body {
 3. ✅ `component-loader.js` 통합
 4. ✅ 언어 스위처 UI 구현
 
-### Phase 2: 번역 작업 (2-3일)
-1. ✅ `jp.json` 일본어 번역 작성
-2. ✅ 모든 HTML 컴포넌트에 `data-i18n` 속성 추가
-3. ✅ 이미지 alt 텍스트, placeholder 등 속성 번역
+### Phase 2: 번역 작업 (3-4일)
+1. ✅ `ja.json` 일본어 번역 작성
+2. ✅ `en.json` 영어 번역 작성
+3. ✅ 모든 HTML 컴포넌트에 `data-i18n` 속성 추가
+4. ✅ 이미지 alt 텍스트, placeholder 등 속성 번역
 
 ### Phase 3: 테스트 및 최적화 (1-2일)
 1. ✅ 언어 전환 동작 테스트
@@ -469,13 +506,15 @@ html[lang="jp"] body {
 
 ### 새 콘텐츠 추가 시
 ```javascript
-// 1. kr.json, jp.json에 키 추가
-{
-  "newSection": {
-    "title": "새 섹션"  // ko.json
-    "title": "新しいセクション"  // ja.json
-  }
-}
+// 1. ko.json, ja.json, en.json에 키 추가
+// ko.json
+{ "newSection": { "title": "새 섹션" } }
+
+// ja.json
+{ "newSection": { "title": "新しいセクション" } }
+
+// en.json
+{ "newSection": { "title": "New Section" } }
 
 // 2. HTML에 data-i18n 속성 추가
 <h2 data-i18n="newSection.title">새 섹션</h2>
@@ -491,11 +530,12 @@ html[lang="jp"] body {
 - **번들 크기**: JSON 파일 gzip 압축 (GitHub Pages 자동 지원)
 
 ### 예상 파일 크기
-- `kr.json`: ~15-20KB
-- `jp.json`: ~18-23KB (일본어가 약간 더 길 수 있음)
+- `ko.json`: ~15-20KB
+- `ja.json`: ~18-23KB (일본어가 약간 더 길 수 있음)
+- `en.json`: ~12-18KB (영어는 짧은 표현 많음)
 - `i18n.js`: ~5KB
 
-**총 추가 로드**: ~25KB (첫 방문), ~5KB (재방문 시 캐시 활용)
+**총 추가 로드**: ~30KB (첫 방문), ~5KB (재방문 시 캐시 활용)
 
 ---
 
@@ -520,12 +560,13 @@ html[lang="jp"] body {
 
 ### 추가 언어 지원
 ```javascript
-// 영어(EN) 추가 시
-// 1. public/i18n/en.json 생성
-// 2. i18n.js의 언어 목록에 'en' 추가
-// 3. 언어 스위처에 버튼 추가
+// 현재 지원 언어
+const SUPPORTED_LANGUAGES = ['ko', 'ja', 'en'];
 
-const SUPPORTED_LANGUAGES = ['kr', 'jp', 'en'];
+// 향후 중국어(ZH) 등 추가 시
+// 1. public/i18n/zh.json 생성
+// 2. SUPPORTED_LANGUAGES에 'zh' 추가
+// 3. 언어 스위처에 버튼 추가
 ```
 
 ### 번역 관리 도구 도입
@@ -539,7 +580,9 @@ const SUPPORTED_LANGUAGES = ['kr', 'jp', 'en'];
 ### 구현 전
 - [ ] 기존 한국어 콘텐츠 JSON으로 추출
 - [ ] 일본어 번역 준비 (전문 번역가 또는 DeepL/GPT 활용)
+- [ ] 영어 번역 준비 (자연스러운 표현 및 기술 용어 통일)
 - [ ] 일본 취업 시장 맞춤 표현 검토
+- [ ] 영어권 취업 시장 맞춤 표현 검토
 
 ### 구현 중
 - [ ] i18n.js 개발 및 테스트
@@ -552,6 +595,7 @@ const SUPPORTED_LANGUAGES = ['kr', 'jp', 'en'];
 - [ ] 모바일 테스트 (iOS, Android)
 - [ ] SEO 검증 (Google Search Console)
 - [ ] 일본어 원어민 리뷰
+- [ ] 영어 네이티브 리뷰 (또는 DeepL/GPT 품질 검토)
 
 ---
 
@@ -571,9 +615,11 @@ const SUPPORTED_LANGUAGES = ['kr', 'jp', 'en'];
    - 학력을 경력보다 위에 배치하는 경우 많음
 
 ### 유용한 도구
-- **DeepL**: 한일 번역 품질 우수
+- **DeepL**: 한일/한영 번역 품질 우수
 - **みんなの日本語**: 비즈니스 일본어 표현 참고
 - **Wantedly**: 일본 IT 취업 플랫폼 (이력서 샘플 참고)
+- **LinkedIn**: 영어권 개발자 프로필 표현 참고
+- **Grammarly**: 영어 교정 도구
 
 ---
 
@@ -582,10 +628,10 @@ const SUPPORTED_LANGUAGES = ['kr', 'jp', 'en'];
 | 단계 | 소요 시간 | 담당 |
 |-----|---------|-----|
 | 기반 구축 | 1-2일 | 개발 |
-| 번역 작업 | 2-3일 | 번역 + 검수 |
+| 번역 작업 (KO+JA+EN) | 3-5일 | 번역 + 검수 |
 | 테스트 | 1-2일 | 개발 + QA |
 | 배포 | 0.5일 | DevOps |
-| **총합** | **5-8일** | - |
+| **총합** | **6-10일** | - |
 
 ---
 
@@ -597,7 +643,7 @@ const SUPPORTED_LANGUAGES = ['kr', 'jp', 'en'];
 ✅ 정적 사이트 특성 유지
 ✅ 최소한의 코드 변경
 ✅ 번역 관리 용이성
-✅ 확장 가능성 (향후 영어 등 추가 가능)
+✅ 확장 가능성 (KO/JA/EN 3개 언어, 향후 중국어 등 추가 가능)
 ✅ SEO 친화적
 
 **다음 단계:**

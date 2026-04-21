@@ -25,7 +25,8 @@
   height: 100%;
   max-width: var(--container-max-width);
   margin: 0 auto;
-  padding: 0 var(--spacing-lg);
+  padding: 0 var(--spacing-md);
+  position: relative;
 }
 
 /* Logo */
@@ -58,6 +59,9 @@
   margin: 0;
   padding: 0;
   gap: var(--spacing-lg);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .nav-item {

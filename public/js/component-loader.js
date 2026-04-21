@@ -197,12 +197,17 @@ document.addEventListener('DOMContentLoaded', async () => {
 // 컴포넌트 로드 완료 후 포트폴리오 초기화
 function initializePortfolioAfterComponents() {
   // 약간의 지연을 주어 DOM이 완전히 렌더링되도록 함
-  setTimeout(() => {
+  setTimeout(async () => {
     console.log('Initializing portfolio functionality...');
-    
+
+    // i18n 초기화 (최우선)
+    if (window.i18n) {
+      await window.i18n.init();
+    }
+
     // CSS 스타일 추가
     addPortfolioStyles();
-    
+
     // Navigation 재초기화
     if (typeof PortfolioNavigation !== 'undefined') {
       window.portfolioNav = new PortfolioNavigation();

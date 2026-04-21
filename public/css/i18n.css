@@ -1,0 +1,139 @@
+/* ===========================
+   Nav Actions 래퍼
+   select + hamburger 고정 그룹
+   =========================== */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+/* nav-menu가 공간을 양보하도록 */
+.nav-menu {
+  min-width: 0;
+}
+
+/* ===========================
+   언어 셀렉트 래퍼 (pill 형태)
+   햄버거(30px)와 높이 일치
+   =========================== */
+.language-switcher {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  height: 30px;
+  padding: 0 0.55rem 0 0.65rem;
+  border: 1.5px solid var(--color-secondary);
+  border-radius: 2rem;
+  background: transparent;
+  box-sizing: border-box;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.language-switcher:hover {
+  background: rgba(52, 152, 219, 0.07);
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.12);
+}
+
+/* ===========================
+   지구본 아이콘
+   =========================== */
+.lang-globe {
+  font-size: 0.75rem;
+  color: var(--color-secondary);
+  pointer-events: none;
+  flex-shrink: 0;
+}
+
+/* ===========================
+   select 요소
+   =========================== */
+.lang-select {
+  appearance: none;
+  -webkit-appearance: none;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: var(--font-primary);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  cursor: pointer;
+  padding-right: 1.1rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='5' viewBox='0 0 8 5'%3E%3Cpath d='M0 0l4 5 4-5z' fill='%233498DB'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0 center;
+  background-size: 7px 5px;
+  min-width: 54px;
+  height: 100%;
+  line-height: 1;
+}
+
+.lang-select:focus {
+  outline: none;
+}
+
+.lang-select option {
+  background-color: var(--color-bg-primary);
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+/* ===========================
+   소형 모바일 (≤360px) 이탈 방지
+   =========================== */
+@media (max-width: 360px) {
+  .lang-globe {
+    display: none;
+  }
+
+  .lang-select {
+    min-width: 44px;
+  }
+}
+
+/* ===========================
+   일본어 폰트 최적화
+   =========================== */
+html[lang="ja"] body {
+  font-family: 'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', 'Noto Sans KR', sans-serif;
+  line-height: 1.8;
+}
+
+/* ===========================
+   영어 폰트 최적화
+   =========================== */
+html[lang="en"] body {
+  font-family: 'Inter', 'Roboto', 'Noto Sans', 'Noto Sans KR', sans-serif;
+}
+
+/* ===========================
+   언어별 폰트 크기 조절
+   About 섹션 레이아웃 보호
+   =========================== */
+
+/* 영어: 텍스트가 한국어보다 길어 주요 요소 축소 */
+html[lang="en"] .highlight-text {
+  font-size: var(--font-size-lg);   /* 20px → 18px */
+}
+
+html[lang="en"] .section-subtitle {
+  font-size: var(--font-size-sm);   /* 20px → 14px, 긴 영문 서브타이틀 보호 */
+}
+
+html[lang="en"] .about-story p {
+  font-size: var(--font-size-base); /* 18px → 16px */
+}
+
+html[lang="en"] .values-list strong {
+  font-size: var(--font-size-base); /* 18px → 16px */
+}
+
+/* 일본어: CJK 래핑으로 레이아웃은 안정적이나 highlight 박스 여백 보호 */
+html[lang="ja"] .highlight-text {
+  font-size: var(--font-size-lg);   /* 20px → 18px */
+}

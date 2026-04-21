@@ -4,49 +4,60 @@
     <!-- Logo -->
     <a href="#home" class="logo">
       <i class="fas fa-code"></i>
-      <span class="logo-text">Backend <span class="logo-highlight">Developer</span></span>
+      <span class="logo-text">Backend</span>
     </a>
-    
+
     <!-- Desktop Navigation -->
     <ul class="nav-menu">
       <li class="nav-item">
         <a href="#home" class="nav-link active">
           <i class="fas fa-home nav-icon"></i>
-          Home
+          <span data-i18n="nav.home">Home</span>
         </a>
       </li>
       <li class="nav-item">
         <a href="#about" class="nav-link">
           <i class="fas fa-user nav-icon"></i>
-          About
+          <span data-i18n="nav.about">About</span>
         </a>
       </li>
       <li class="nav-item">
         <a href="#skills" class="nav-link">
           <i class="fas fa-code-branch nav-icon"></i>
-          Skills
+          <span data-i18n="nav.skills">Skills</span>
         </a>
       </li>
       <li class="nav-item">
         <a href="#experience" class="nav-link">
           <i class="fas fa-briefcase nav-icon"></i>
-          Experience
+          <span data-i18n="nav.experience">Experience</span>
         </a>
       </li>
       <li class="nav-item">
         <a href="#projects" class="nav-link">
           <i class="fas fa-laptop-code nav-icon"></i>
-          Projects
+          <span data-i18n="nav.projects">Projects</span>
         </a>
       </li>
     </ul>
-    
-    <!-- Hamburger Menu Button -->
-    <button class="hamburger" aria-label="메뉴 열기">
-      <span class="hamburger-line"></span>
-      <span class="hamburger-line"></span>
-      <span class="hamburger-line"></span>
-    </button>
+
+    <!-- Nav Actions: Language Switcher + Hamburger -->
+    <div class="nav-actions">
+      <div class="language-switcher">
+        <i class="fas fa-globe lang-globe"></i>
+        <select class="lang-select" id="langSelect" aria-label="Language">
+          <option value="ko">🇰🇷 KO</option>
+          <option value="ja">🇯🇵 JA</option>
+          <option value="en">🇺🇸 EN</option>
+        </select>
+      </div>
+
+      <button class="hamburger" data-i18n-aria="nav.menuOpen" aria-label="메뉴 열기">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
   </nav>
 </header>
 
@@ -56,47 +67,47 @@
 <!-- Mobile Navigation -->
 <nav class="mobile-nav">
   <div class="mobile-nav-header">
-    <span class="mobile-nav-title">Portfolio Menu</span>
-    <button class="mobile-close" aria-label="메뉴 닫기">
+    <span class="mobile-nav-title" data-i18n="nav.mobileTitle">Portfolio Menu</span>
+    <button class="mobile-close" data-i18n-aria="nav.menuClose" aria-label="메뉴 닫기">
       <i class="fas fa-times"></i>
     </button>
   </div>
-  
+
   <ul class="mobile-nav-menu">
     <li class="mobile-nav-item">
       <a href="#home" class="mobile-nav-link active">
         <i class="fas fa-home mobile-nav-icon"></i>
-        Home
+        <span data-i18n="nav.home">Home</span>
       </a>
     </li>
     <li class="mobile-nav-item">
       <a href="#about" class="mobile-nav-link">
         <i class="fas fa-user mobile-nav-icon"></i>
-        About Me
+        <span data-i18n="nav.aboutMe">About Me</span>
       </a>
     </li>
     <li class="mobile-nav-item">
       <a href="#skills" class="mobile-nav-link">
         <i class="fas fa-code-branch mobile-nav-icon"></i>
-        Technical Skills
+        <span data-i18n="nav.technicalSkills">Technical Skills</span>
       </a>
     </li>
     <li class="mobile-nav-item">
       <a href="#experience" class="mobile-nav-link">
         <i class="fas fa-briefcase mobile-nav-icon"></i>
-        Career Timeline
+        <span data-i18n="nav.careerTimeline">Career Timeline</span>
       </a>
     </li>
     <li class="mobile-nav-item">
       <a href="#projects" class="mobile-nav-link">
         <i class="fas fa-laptop-code mobile-nav-icon"></i>
-        Projects
+        <span data-i18n="nav.projects">Projects</span>
       </a>
     </li>
   </ul>
-  
+
   <div class="mobile-social">
-    <div class="mobile-social-title">Follow Me</div>
+    <div class="mobile-social-title" data-i18n="nav.followMe">Follow Me</div>
     <div class="mobile-social-links">
       <a href="https://github.com/kong-droid" class="mobile-social-link" target="_blank" rel="noopener">
         <i class="fab fa-github"></i>
