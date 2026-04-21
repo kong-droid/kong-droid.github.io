@@ -1,0 +1,231 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "experience": "Experience",
+    "projects": "Projects",
+    "mobileTitle": "Portfolio Menu",
+    "aboutMe": "About Me",
+    "technicalSkills": "Technical Skills",
+    "careerTimeline": "Career Timeline",
+    "followMe": "Follow Me",
+    "menuOpen": "Open Menu",
+    "menuClose": "Close Menu"
+  },
+  "hero": {
+    "greeting": "Hello! 👋",
+    "titleLine1": "From Infrastructure to API",
+    "titleLine2": "Developer Kong Mi-hyang",
+    "titleLine3": "",
+    "ctaProjects": "View Projects",
+    "scrollDown": "Scroll Down",
+    "profileAlt": "Kong Mi-hyang Profile Photo"
+  },
+  "about": {
+    "title": "About Me",
+    "subtitle": "A Developer Who Builds From Infrastructure to API",
+    "highlight": "\"Quickly Masters Domains<br>and Designs From Infrastructure to API\"",
+    "story1": "With over 3 years of experience in the food and beverage industry, I developed a strong habit of <strong>taking detailed notes</strong> and understood the value of <strong>systematic preparation</strong>. Leveraging that foundation, I transitioned into software development, where I now <strong>document problem-solving processes systematically</strong> to design immediately applicable systems.",
+    "story2": "My first development experience was in the <strong>MICE domain</strong>, where I built the digital expo platform <strong>O2MEET</strong> and gained hands-on experience in system automation. I then expanded into the <strong>logistics and packaging domain</strong>, developing and maintaining the real-time data logger monitoring system <strong>SmartPod</strong>.",
+    "valuesTitle": "Core Values",
+    "value1Title": "Problem-Solving Scenario Writing",
+    "value1Desc": "Systematically analyze and document areas for improvement",
+    "value2Title": "Automation & Efficiency",
+    "value2Desc": "Drive automation and efficiency through CI/CD implementation",
+    "value3Title": "Cross-Domain Experience",
+    "value3Desc": "Broad perspective and adaptability from diverse domain exposure",
+    "infoTitle": "Basic Info",
+    "labelName": "Name",
+    "labelEmail": "Email",
+    "labelEducation": "Education",
+    "labelTraining": "Training",
+    "valueName": "Kong Mi-hyang",
+    "valueEducation": "Namseoul University, Hotel Management",
+    "valueTraining": "EZEN Computer Academy, Anyang<br>Java Android Web & App Developer Course",
+    "certTitle": "Certifications & Language",
+    "cert1": "Linux Master Level 2",
+    "cert2": "JLPT N2 (Japanese)",
+    "cert3": "Internet Information Manager Level 2"
+  },
+  "skills": {
+    "title": "Technical Skills",
+    "subtitle": "Core Technologies & Tools",
+    "yearsFormat": "{{n}}+ yrs",
+    "stat1Label": "RDS Cost Reduction",
+    "stat2Label": "Query Speed Improved",
+    "stat2Number": "3s → 0.5s",
+    "stat3Label": "Reusability Improved",
+    "stat4Label": "IoT Devices Sold",
+    "stat4Number": "1,000+",
+    "stat5Label": "Maintainability Improved",
+    "stat5Number": "CI/CD",
+    "stat6Label": "SmartPod Servers Built",
+    "stat6Number": "Mobile, File, IoT"
+  },
+  "experience": {
+    "title": "Career Timeline",
+    "subtitle": "My Development Journey",
+    "thermolab": {
+      "company": "Thermolab Korea",
+      "period": "2023.04 ~ Present",
+      "position": "PaaS Dev Team / Assistant Manager",
+      "description": "Expanded into the <strong>logistics and packaging</strong> domain, building mobile and IoT servers for real-time data logger temperature aggregation and developing a monitoring system with report generation.",
+      "ach1": "<strong>SmartPod Mobile & IoT Server Development</strong>",
+      "ach2": "AWS server optimization&nbsp;<strong>50% RDS cost reduction</strong>",
+      "ach3": "Common source modularization&nbsp;<strong>70% reusability improvement</strong>",
+      "ach4": "Query optimization & indexing&nbsp;<strong>query speed 3s→0.5s</strong>",
+      "ach5": "Jenkins→Github Actions CI/CD migration&nbsp;<strong>improved maintainability</strong>",
+      "ach6": "<strong>GC CELL data relay server development&nbsp;</strong>contributed to 220 unit sales",
+      "ach7": "<strong>1,000+ data loggers sold</strong>"
+    },
+    "ezpmp": {
+      "company": "EZPMP Co., Ltd.",
+      "period": "2020.10 ~ 2023.02",
+      "position": "ICT Convergence Research Institute / Senior Researcher",
+      "description": "Developed a digital expo platform in the <strong>MICE industry</strong>, proposed and implemented the idea of \"automatically generating events from the admin web.\"",
+      "ach1": "<strong>Mobile expo web development for Agriculture Expo, BCWW, WSCE, Food Show, etc.</strong>",
+      "ach2": "<strong>Demo web → proposal to planning team → actual feature development</strong>",
+      "ach3": "Access/video stats query speed&nbsp;<strong>improved from 40s to 1s</strong>",
+      "ach4": "SSO login token system implementation and validation",
+      "ach5": "Domain-based event routing&nbsp;<strong>improved resource efficiency</strong>"
+    },
+    "ezen": {
+      "company": "EZEN Computer Academy",
+      "period": "2019.10 ~ 2020.04",
+      "position": "Java Android Web & App Developer Course",
+      "description": "After graduating in Hotel Management, I decided to transition into software development and completed a structured training program.<br/><strong>Developed \"SilverTube\", a YouTube channel intro app for creators under 100K subscribers</strong> as a team project, and operated the service for one year."
+    }
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "Featured Projects",
+    "detailBtn": "View Details",
+    "smartpod": {
+      "name": "SmartPod",
+      "period": "2023.04 ~ Ongoing",
+      "description": "Real-time data logger temperature aggregation and monitoring system",
+      "alt": "SmartPod Project"
+    },
+    "gccell": {
+      "name": "GC CELL Relay Server",
+      "period": "2024.12 ~ 2025.03",
+      "description": "Real-time relay server transmitting data logger temperatures to GC CELL servers",
+      "alt": "GC CELL Relay Server"
+    },
+    "o2meet": {
+      "name": "O2MEET",
+      "period": "2021.01 ~ 2023.02",
+      "description": "An integrated platform for anyone to easily create and host events",
+      "alt": "O2MEET Project"
+    },
+    "healingfesta": {
+      "name": "Healing Festa Gyeongju 2021",
+      "period": "2021.05 ~ 2021.11",
+      "description": "Lecture introduction and offline ticket reservation system",
+      "alt": "Healing Festa Gyeongju 2021"
+    },
+    "dikidiki": {
+      "name": "Diki Diki",
+      "period": "2020.10 ~ 2021.12",
+      "description": "Children's playground web project located at DDP (Dongdaemun Design Plaza)",
+      "alt": "Diki Diki"
+    },
+    "ctaText": "Explore more projects and detailed technical documentation",
+    "ctaBtn": "More on GitHub"
+  },
+  "footer": {
+    "quickLinks": "Quick Links",
+    "connect": "Connect",
+    "copyright": "© 2025 Kong Mi-hyang. All rights reserved.",
+    "builtWith": "Built with Claude.ai and Vibe Coding collaboration."
+  },
+  "modal": {
+    "label": {
+      "period": "Period",
+      "description": "Overview",
+      "techStack": "Tech Stack",
+      "contribution": "Contribution",
+      "teamSize": "Team Size",
+      "infrastructure": "Infrastructure Diagram",
+      "images": "Project Images",
+      "techDoc": "Project Details",
+      "mainTasks": "Main Responsibilities",
+      "detailedTasks": "Detailed Tasks",
+      "achievements": "Achievements",
+      "lessons": "Lessons Learned",
+      "prevImage": "Previous image",
+      "nextImage": "Next image"
+    },
+    "smartpod": {
+      "description": "A service that supports real-time data logger location and temperature tracking and provides reports",
+      "teamSizeText": "10 members (Planning 3, Designer 1, Publisher 1, Frontend 1, Server 1, AOS 1, iOS 1)",
+      "url1Label": "SmartPod Android App",
+      "url2Label": "SmartPod Web Cloud",
+      "url3Label": "SmartPod Customer Portal",
+      "infraAlt": "SmartPod Server Architecture",
+      "caption0": "Main",
+      "caption1": "Status View",
+      "caption2": "Status View - Detail",
+      "caption3": "Temperature Report Detail",
+      "caption4": "Gateway - Temperature Aggregation & Report Generation",
+      "caption5": "Device Management List",
+      "caption6": "Notification List",
+      "caption7": "FCM",
+      "mainTasksList": "<li>DBMS Design</li><li>AWS Infrastructure & Monitoring System Setup</li><li>Spring Boot RESTful API Mobile & Web Server Development</li><li>Vue.js Admin Web Development & UI Improvements</li><li>Node.js MQTT Server Development</li><li>Regular Updates</li>",
+      "detailedTasksList": "<li>DBMS Design & Data Migration<ul><li>Designed tables for delivery info, raw data, history, notifications, boards, and supplemented columns</li><li>Data migration during regular updates</li><li>Wrote and maintained table definitions and DDL documents</li></ul></li><li>AWS Infrastructure Setup & Operations<ul><li>Grouped data loggers using IoT Core, CloudWatch, Lambda and integrated with SmartPod server</li><li>Built server infrastructure with EC2, ELB, Route53, ACM</li><li>Set up security and file server with S3, CloudFront, Route53</li><li>Built domain-based outbound-only email system using SES and Route53</li></ul></li><li>Zero-Downtime Server Deployment<ul><li>Designed Nginx Port Forwarding</li><li>Designed and built branch-based deployment pipeline with Github Actions</li></ul></li><li>Mobile/Device Management Process<ul><li>Established and documented device management procedures</li><li>Built device management CRUD APIs</li><li>Improved from single-user departure alerts to group-based alerts with calibration and battery notifications</li><li>Built weekly calibration and battery alert scheduler using node-cron</li></ul></li><li>Delivery Information Process<ul><li>Documented delivery info mapping server process</li><li>Built delivery info CRUD APIs</li><li>Query optimization: <strong>5s → 1s improvement</strong></li></ul></li><li>Cloud Upload Process<ul><li>Cloud upload API implementation and query optimization: <strong>3s → 0.5s improvement</strong></li></ul></li><li>Aggregated Data Report Improvements<ul><li>PDF/Excel download speed improvement (30s → 1s)</li></ul></li><li>Notification System Enhancement<ul><li>Changed notification targets from individual to group-based</li></ul></li><li>Common Code Modularization & CI/CD<ul><li>Designed/developed shared modules to eliminate code duplication and standardize features</li><li>Built CI/CD pipeline integrating Github Actions and Nexus</li></ul></li>",
+      "achievementsList": "<li>Built SmartPod server environment on AWS for stable and efficient operations</li><li>Reduced monthly RDS costs by <strong>50%</strong> through server spec optimization</li><li>Contributed to selling <strong>1,000+ data loggers</strong> by meeting partner requirements</li><li>Improved usability through regular SmartPod updates</li>"
+    },
+    "gccell": {
+      "description": "A relay server that aggregates real-time and report temperature data and transmits it from the relay server to the GC CELL server",
+      "teamSizeText": "2 members (Backend 2)",
+      "url1Label": "SmartPod GC Cell Monitoring Android App",
+      "infraAlt": "SmartPod Server Architecture",
+      "caption0": "Before Monitoring Starts",
+      "caption1": "Monitoring Start - Data Logger Bluetooth Scan",
+      "caption2": "Monitoring Start - Real-time Bluetooth Scan Data Transmission",
+      "caption3": "Data Logger Temperature Departure Alert FCM Transmission",
+      "mainTasksList": "<li>DBMS Design</li><li>Spring Boot RESTful API Server Development</li><li>GC CELL API Integration & Data Mapping via WebClient</li><li>AWS Infrastructure Setup & Monitoring System</li>",
+      "detailedTasksList": "<li>DBMS Design & Development Documentation<ul><li>Table design, definition documents, and DDL development documentation</li></ul></li><li>AWS-based Server Setup & Operations</li><li>Zero-Downtime Server Deployment<ul><li>Nginx Port Forwarding design</li><li>Branch-based deployment design with Github Actions</li></ul></li><li>GC CELL Dedicated API Development<ul><li>Asynchronous real-time temperature transmission to GC CELL server via WebClient</li><li>Asynchronous aggregated temperature data transmission to GC CELL server via WebClient</li><li>Built Node.js + node-cron scheduler to detect and resend missing data daily at midnight</li></ul></li>",
+      "achievementsList": "<li>Built real-time data relay system - achieved data transmission error rate below <strong>0.1%</strong></li><li>Attracted first major enterprise client and contributed to selling <strong>220 data loggers</strong></li>",
+      "lessonsText": "Initially, I was testing with reduced log levels, so I wasn't aware of data transmission omissions to the relay server.<br>Shortly into the beta test period, while collaborating with the client's development team, we discovered that some temperature data wasn't being transmitted 100% and was getting dropped.<br>After running both white-box and black-box tests to reproduce the error, we identified that timeout errors were occurring during synchronous data transmission from the SmartPod server to the relay server.<br>Based on the analysis — that 'SmartPod server must transmit data to the relay server, but doesn't need a response' — I switched to WebClient's asynchronous method. After fixing and deploying to the production server, temperature data transmitted correctly without errors. I learned that bugs can always be fixed if you approach root cause analysis from multiple angles."
+    },
+    "o2meet": {
+      "description": "A service that allows users to host events online",
+      "teamSizeText": "15 members (Planning 5, Frontend 6, Backend 4)",
+      "url1Label": "O2MEET Portal",
+      "caption0": "Main",
+      "caption1": "Introduction",
+      "caption2": "Online Expo using O2MEET API - 1",
+      "caption3": "Online Expo using O2MEET API - 2",
+      "mainTasksList": "<li>Zero-downtime deployment for test and production servers</li><li>DBMS design for event info, surveys, products, file attachments, and categories</li><li>Event info, survey, product, and file attachment API development</li><li>Event info admin web development</li>",
+      "detailedTasksList": "<li>Login<ul><li>Implemented login persistence by storing login token in cookie and communicating with server</li><li>Built SSO feature that validates token by redirecting to server</li></ul></li><li>Surveys<ul><li>Built common surveys and business meeting survey features based on survey type, event code, and index</li><li>Built survey result aggregation list and Excel download for admin web</li></ul></li><li>Products<ul><li>Grouped products by product type and event code</li><li>Designed product common info table and language-specific setting table (1:N) for multilingual support</li></ul></li><li>Event Information<ul><li>Designed admin web UI and built event basic info, header menu, navigation bar, footer, event language, and detail option features</li><li>Built domain verification-based event navigation feature</li></ul></li><li>Statistics<ul><li>Improved query performance by replacing subqueries with joins</li></ul></li>",
+      "achievementsList": "<li>Improved admin web access statistics and video statistics query from 40s to 1s, and implemented Excel download</li><li>Survey API development and documentation sharing enabled easy per-event custom survey creation and analysis</li><li>Implemented consistent file storage with /event-name/date/category naming convention</li><li>Enabled admin web users to manage headers, footers, navigation bars, and menus to fit the event's purpose</li><li>Improved resource efficiency by routing different events via domain on a single server</li>",
+      "lessonsText": "Working on this project, I was able to learn frontend fundamentals such as CSR, SSR, MPA, SPA, Cookie, and Session, along with ES5 and ES6 syntax.<br/>I also learned JSP and experienced the difference between synchronous and asynchronous communication firsthand.<br/>Figuring out how to connect multiple domains on a single server using port forwarding so users reach their intended main page was something I tackled and implemented myself. It was a precious experience that taught me there are many efficient approaches out there, and gave me the confidence that I can do it too."
+    },
+    "healingfesta": {
+      "description": "A web project for online booking of offline classes (yoga, pilates, singing bowl) for a festival aimed at boosting physical and mental immunity in Gyeongju",
+      "teamSizeText": "4 members (Planning 2, Frontend 2)",
+      "url1Label": "Healing Festa 2021",
+      "serviceEnded": "Service Ended",
+      "caption0": "Healing Festa 2021 Poster",
+      "mainTasksList": "<li>Screen implementation and data fetching for login, signup, board, and survey features via async O2MEET API communication</li><li>Mobile payment module development</li><li>Testing and debugging</li>",
+      "detailedTasksList": "<li>Sign Up<ul><li>Built required field validation (ID, email, password) using regular expressions</li><li>Built email identity verification by communicating with O2MEET SMS verification API</li></ul></li><li>Login<ul><li>Implemented login persistence by storing login token in localStorage and communicating with server</li></ul></li><li>Board<ul><li>Admin web post create/edit/delete: communicated with O2MEET API and managed state with recoil.js</li><li>User web: built post list view per board</li><li>File attachment per post via O2MEET file attachment API</li></ul></li><li>Surveys<ul><li>Admin web survey create/edit/delete: communicated with O2MEET survey management API and managed state with recoil.js</li><li>Admin web survey result create/edit/delete: specified survey score ranges via API</li></ul></li>",
+      "achievementsList": "<li>Completed board, survey, and member info lookup features for the admin web</li><li>Users were able to purchase and cancel lectures on mobile without any errors</li>",
+      "lessonsText": "This was the first project where I implemented React and a payment module.<br/>While building the web using the O2MEET API, I learned about async communication concepts and ES6 syntax. When first implementing the payment feature, I ran into the 'Same-Origin Policy' issue.<br/>Through that process, the idea sparked: 'Can I make it reusable across multiple projects?' The thrill I felt when I structured a single payment module to handle the entire flow — start to finish — with the web only displaying the result, is still vivid in my memory.<br/>After constructing the scenario myself and completing development, when the payment ran flawlessly in production, it was the first time I truly saw my own potential as a developer."
+    },
+    "dikidiki": {
+      "description": "A web project for a children's playground at DDP (Dongdaemun Design Plaza), featuring ticket booking, event announcements, and children's play range reports",
+      "teamSizeText": "3 members (Operations 2, Development 1)",
+      "url1Label": "Diki Diki Web",
+      "caption0": "Main",
+      "caption1": "Notice Board",
+      "caption2": "Sign Up",
+      "caption3": "Introduction",
+      "mainTasksList": "<li>Web Maintenance</li>",
+      "detailedTasksList": "<li>Schedule coordination with Diki Diki operations team</li><li>Modified main banners, popups, and all web page images and text content per requirements and screen design documents</li>",
+      "achievementsList": "<li>After modifying web pages, deployed to test server and ran tests with the Diki Diki operations team to ensure a clean production deployment</li><li>Completed maintenance on schedule, preventing any information confusion for users</li><li>Applied Git version control to share work history with team members and preserve source code</li>",
+      "lessonsText": "The Diki Diki project was my first experience applying Git in a professional environment, and it began with analyzing source code left by previous developers.<br/>Through the source analysis process, I was able to build up knowledge and imagination for implementing payment modules. Even without prior frontend experience, directly handling CSS and HTML tags gave me confidence in frontend development, and I was happy for it. I also realized that connecting to the production server via SSH to directly modify and deploy files meant I could contribute to real-world operations, which helped me grow further as a developer.<br/>After a year of handling maintenance before handing it off to another team member, I remember feeling a bittersweet mix of relief and nostalgia."
+    }
+  }
+}

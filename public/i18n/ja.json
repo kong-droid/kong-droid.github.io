@@ -1,0 +1,231 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "experience": "Experience",
+    "projects": "Projects",
+    "mobileTitle": "Portfolio Menu",
+    "aboutMe": "自己紹介",
+    "technicalSkills": "技術スキル",
+    "careerTimeline": "職歴",
+    "followMe": "Follow Me",
+    "menuOpen": "メニューを開く",
+    "menuClose": "メニューを閉じる"
+  },
+  "hero": {
+    "greeting": "はじめまして！👋",
+    "titleLine1": "インフラからAPIまで",
+    "titleLine2": "自ら構築するエンジニア コン・ミヒャン",
+    "titleLine3": "です",
+    "ctaProjects": "プロジェクトを見る",
+    "scrollDown": "Scroll Down",
+    "profileAlt": "コン・ミヒャン プロフィール写真"
+  },
+  "about": {
+    "title": "About Me",
+    "subtitle": "インフラからAPIまで自ら構築するエンジニア",
+    "highlight": "\"ドメインを素早く習得し<br>インフラからAPIまで設計するエンジニア\"",
+    "story1": "飲食業界で3年以上勤務し、<strong>メモを取る習慣</strong>と<strong>体系的な準備</strong>の重要性を身につけました。その経験を活かして開発の世界に飛び込み、現在は<strong>問題解決のプロセスを体系的にドキュメント化</strong>しながら、現場で即活用できるシステムを設計しています。",
+    "story2": "最初の開発は<strong>MICEドメイン</strong>から始まり、デジタル展示会プラットフォーム<strong>O2MEET</strong>を開発してシステム自動化を経験しました。その後<strong>物流・包装ドメイン</strong>に拡張し、データロガーのリアルタイム監視システム<strong>SmartPod</strong>の開発・保守業務を行っています。",
+    "valuesTitle": "コアバリュー",
+    "value1Title": "問題解決シナリオの作成",
+    "value1Desc": "機能改善点を体系的に分析・ドキュメント化",
+    "value2Title": "自動化と効率化の改善",
+    "value2Desc": "CI/CD構築による自動化と効率化の推進",
+    "value3Title": "クロスドメイン経験",
+    "value3Desc": "多様なドメイン経験による幅広い視野と適応力",
+    "infoTitle": "基本情報",
+    "labelName": "氏名",
+    "labelEmail": "メール",
+    "labelEducation": "学歴",
+    "labelTraining": "教育",
+    "valueName": "コン・ミヒャン",
+    "valueEducation": "南ソウル大学 ホテル経営学科",
+    "valueTraining": "イージェンコンピュータースクール 安養<br>JavaアンドロイドWeb&Appデベロッパーコース",
+    "certTitle": "資格・語学",
+    "cert1": "Linuxマスター 2級",
+    "cert2": "JLPT N2 (日本語)",
+    "cert3": "インターネット情報管理士 2級"
+  },
+  "skills": {
+    "title": "Technical Skills",
+    "subtitle": "専門技術とツール",
+    "yearsFormat": "{{n}}年以上",
+    "stat1Label": "RDSコスト削減",
+    "stat2Label": "検索速度改善",
+    "stat2Number": "3秒→0.5秒",
+    "stat3Label": "再利用性向上",
+    "stat4Label": "IoTデバイス販売",
+    "stat4Number": "1,000台+",
+    "stat5Label": "保守性向上",
+    "stat5Number": "CI/CD移行",
+    "stat6Label": "SmartPodサーバー構築",
+    "stat6Number": "モバイル・ファイル・IoT"
+  },
+  "experience": {
+    "title": "Career Timeline",
+    "subtitle": "開発の歩み",
+    "thermolab": {
+      "company": "サーモラボコリア",
+      "period": "2023.04 〜 現在",
+      "position": "PaaS開発チーム / 代理",
+      "description": "<strong>物流・包装</strong>ドメインに拡張し、データロガーのリアルタイム温度を集計するモバイル・IoTサーバーを構築し、集計データをレポートで確認できる監視システムを開発しました。",
+      "ach1": "<strong>SmartPodモバイル・IoTサーバー開発</strong>",
+      "ach2": "AWSベースサーバー最適化&nbsp;<strong>RDSコスト50%削減</strong>",
+      "ach3": "共通ソースモジュール化&nbsp;<strong>再利用性70%向上</strong>",
+      "ach4": "クエリ最適化・インデックス化&nbsp;<strong>検索速度3秒→0.5秒に改善</strong>",
+      "ach5": "Jenkins→Github Actions CI/CD移行&nbsp;<strong>保守性向上</strong>",
+      "ach6": "<strong>GC CELL データ中継サーバー開発&nbsp;</strong>220台販売貢献・追加購入可能性確保",
+      "ach7": "<strong>1000台以上のデータロガー販売</strong>"
+    },
+    "ezpmp": {
+      "company": "イズピーエムピー",
+      "period": "2020.10 〜 2023.02",
+      "position": "ICT融合研究所 プラットフォーム開発室 / 主任研究員",
+      "description": "<strong>MICE業界</strong>でデジタル展示会プラットフォームを開発し、「管理者Webで行事を自動生成する」というアイデアを提案・実装しました。",
+      "ach1": "<strong>農業博覧会・BCWW・WSCE・食品大典などモバイル展示会Web開発</strong>",
+      "ach2": "<strong>デモWeb制作 → 企画チーム提案 → 実機能開発</strong>",
+      "ach3": "アクセス/動画統計検索速度&nbsp;<strong>40秒→1秒に改善</strong>",
+      "ach4": "SSOログイントークンシステム構築・検証",
+      "ach5": "ドメイン別行事移動機能で&nbsp;<strong>リソース効率性向上</strong>"
+    },
+    "ezen": {
+      "company": "イージェンコンピュータースクール",
+      "period": "2019.10 〜 2020.04",
+      "position": "JavaアンドロイドWeb&Appデベロッパーコース",
+      "description": "ホテル経営学科卒業後、開発者への転身を決意し体系的な教育を受けました。<br/><strong>登録者10万人未満のYouTuber紹介アプリ「シルバーチューブ」</strong>をチームプロジェクトとして開発し、1年間サービスを運営しました。"
+    }
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "主要プロジェクト紹介",
+    "detailBtn": "詳細を見る",
+    "smartpod": {
+      "name": "スマートポッド (SmartPod)",
+      "period": "2023.04 〜 進行中",
+      "description": "リアルタイムデータロガー温度集計・監視システム",
+      "alt": "SmartPodプロジェクト"
+    },
+    "gccell": {
+      "name": "GC CELL 中継サーバー",
+      "period": "2024.12 〜 2025.03",
+      "description": "データロガーの温度をGC CELLサーバーに送信するリアルタイム中継サーバー",
+      "alt": "GC CELL 中継サーバー"
+    },
+    "o2meet": {
+      "name": "オーツーミート (O2MEET)",
+      "period": "2021.01 〜 2023.02",
+      "description": "誰でも簡単にイベントを作成・開催できる統合プラットフォーム",
+      "alt": "O2MEETプロジェクト"
+    },
+    "healingfesta": {
+      "name": "ヒーリングフェスタ 慶州 2021",
+      "period": "2021.05 〜 2021.11",
+      "description": "講義紹介およびオフライン講義予約システム",
+      "alt": "ヒーリングフェスタ 慶州 2021"
+    },
+    "dikidiki": {
+      "name": "ディキディキ",
+      "period": "2020.10 〜 2021.12",
+      "description": "DDP(東大門デザインプラザ)にある子供向け遊び場Webプロジェクト",
+      "alt": "ディキディキ"
+    },
+    "ctaText": "より多くのプロジェクトと詳細な技術ドキュメントをご覧ください",
+    "ctaBtn": "GitHubでもっと見る"
+  },
+  "footer": {
+    "quickLinks": "Quick Links",
+    "connect": "Connect",
+    "copyright": "© 2025 Kong Mi-hyang. All rights reserved.",
+    "builtWith": "Built with Claude.ai and Vibe Coding collaboration."
+  },
+  "modal": {
+    "label": {
+      "period": "期間",
+      "description": "説明",
+      "techStack": "技術スタック",
+      "contribution": "貢献度",
+      "teamSize": "チーム規模",
+      "infrastructure": "インフラ構成図",
+      "images": "プロジェクト画像",
+      "techDoc": "プロジェクト技術書",
+      "mainTasks": "主要業務",
+      "detailedTasks": "詳細業務",
+      "achievements": "成果",
+      "lessons": "学んだこと",
+      "prevImage": "前の画像",
+      "nextImage": "次の画像"
+    },
+    "smartpod": {
+      "description": "リアルタイムデータロガーの位置・温度追跡をサポートし、レポートを提供するサービス",
+      "teamSizeText": "10名（企画3名、デザイナー1名、パブリッシャー1名、フロントエンド1名、サーバー1名、AOS 1名、iOS 1名）",
+      "url1Label": "SmartPod Androidアプリ",
+      "url2Label": "SmartPod Webクラウド",
+      "url3Label": "SmartPod 顧客専用サイト",
+      "infraAlt": "SmartPodサーバー構成図",
+      "caption0": "メイン",
+      "caption1": "状態照会",
+      "caption2": "状態照会 - 詳細情報",
+      "caption3": "温度レポート詳細",
+      "caption4": "ゲートウェイ - 温度データ集計・レポート生成",
+      "caption5": "機器管理一覧",
+      "caption6": "通知一覧",
+      "caption7": "FCM",
+      "mainTasksList": "<li>DBMS設計</li><li>AWSインフラ構成・監視システム構築</li><li>Spring BootベースのRESTful APIモバイル・Webサーバー開発</li><li>Vue.jsベースの運営管理Web開発・UI改善</li><li>Node.jsベースのMQTTサーバー開発</li><li>定期アップデート</li>",
+      "detailedTasksList": "<li>DBMS設計・データマイグレーション<ul><li>配送情報、原本データ、履歴、通知テーブル設計・カラム補完</li><li>定期アップデート時のデータマイグレーション</li><li>テーブル定義書、DDL作成・補完</li></ul></li><li>AWSインフラ構築・運営<ul><li>IoT Core、CloudWatch、LambdaでデータロガーをグループIF化しSmartPodサーバーと連携</li><li>EC2、ELB、Route53、ACMでサーバーインフラ構築・運営</li><li>S3、CloudFront、Route53でセキュリティ設定・ファイルサーバー構築</li><li>SES、Route53でドメインベースの送信専用メールシステム構築</li></ul></li><li>サーバーゼロダウンタイムデプロイ<ul><li>Nginx Port Forwarding設計</li><li>Github Actionsベースのブランチ基準デプロイ設計・構築</li></ul></li><li>モバイル/機器管理プロセス制作<ul><li>機器管理の策定・ドキュメント化</li><li>機器管理照会/保存/削除API制作</li><li>個人通知からグループ通知・検校正・バッテリー残量通知に改善</li></ul></li><li>配送情報プロセス制作<ul><li>配送情報マッピングサーバープロセス文書作成</li><li>配送情報照会/保存/削除API制作</li><li>クエリ最適化 <strong>5秒→1秒改善</strong></li></ul></li><li>クラウドアップロードプロセス制作<ul><li>クラウドアップロードAPI実装・クエリ最適化 <strong>3秒→0.5秒改善</strong></li></ul></li><li>集計データレポート機能改善<ul><li>PDF/Excelダウンロード機能改善（30秒→1秒）</li></ul></li><li>通知機能高度化<ul><li>通知対象を個人からグループに変更</li></ul></li><li>共通コードモジュール化・デプロイ自動化<ul><li>共通モジュール設計/開発でコード重複除去・標準化</li><li>Github Actions - Nexus連携CI/CDパイプライン構築</li></ul></li>",
+      "achievementsList": "<li>AWSを活用してSmartPodサーバー環境を構築し、安定・効率的なサーバー運営を実現</li><li>RDSサーバースペック調整で月RDS料金 <strong>50%削減</strong></li><li>パートナー要件対応で <strong>1,000台以上販売</strong> に貢献</li><li>定期アップデートを通じてユーザビリティ機能を改善</li>"
+    },
+    "gccell": {
+      "description": "リアルタイム温度・レポート温度データを集計後、中継サーバーからGC CELLサーバーに温度データを送信するプログラム",
+      "teamSizeText": "2名（バックエンド2名）",
+      "url1Label": "SmartPod GC Cellモニタリング Androidアプリ",
+      "infraAlt": "SmartPodサーバー構成図",
+      "caption0": "モニタリング開始前画面",
+      "caption1": "モニタリング開始 - データロガーBluetooth スキャン",
+      "caption2": "モニタリング開始 - Bluetoothスキャンデータリアルタイム送信",
+      "caption3": "データロガー温度離脱通知FCMデータ送信",
+      "mainTasksList": "<li>DBMS設計</li><li>Spring BootベースのRESTful APIサーバー開発</li><li>WebClientでGC CELL API連携・データマッピング</li><li>AWSインフラ構成・監視システム構築</li>",
+      "detailedTasksList": "<li>DBMS設計・開発文書作成<ul><li>テーブル設計・定義書、DDL開発文書作成</li></ul></li><li>AWSサービスベースのサーバー構築・運営</li><li>サーバーゼロダウンタイムデプロイ<ul><li>Nginx Port Forwarding設計</li><li>Github Actionsベースのデプロイ設計・構築</li></ul></li><li>GC CELL専用API機能制作<ul><li>データロガーのリアルタイム温度をGC CELLサーバーにWebClient非同期方式で送信</li><li>温度集計完了データをGC CELLサーバーにWebClient非同期方式で送信</li><li>Node.js + node-cronで毎日深夜0時に欠損データを選別して送信するスケジューラーサーバー制作</li></ul></li>",
+      "achievementsList": "<li>リアルタイムデータ中継システム構築 - データ送信エラー <strong>0.1%</strong>未満達成</li><li>初の大型顧客獲得・データロガー <strong>220台</strong> 販売に貢献</li>",
+      "lessonsText": "最初はログレベルを下げた状態でテストを行っていたため、中継サーバーへのデータ送信漏れ問題を認識できていませんでした。<br>ベータテスト期間中に顧客開発チームとの連携で、一部の温度データが100%送信されず漏れていることが判明しました。<br>ホワイトボックステストとブラックボックステストを並行した結果、同期通信方式でタイムアウトエラーが発生していることを確認しました。<br>分析の結果、WebClientクラスを活用した非同期方式に変更し、修正後は温度データがエラーなく正常送信されることを確認しました。原因分析のために多角的に考えれば修正できるということを学びました。"
+    },
+    "o2meet": {
+      "description": "オンラインでイベントを主催できるサービス",
+      "teamSizeText": "15名（企画5名、フロントエンド6名、バックエンド4名）",
+      "url1Label": "O2MEETポータル",
+      "caption0": "メイン",
+      "caption1": "紹介",
+      "caption2": "O2MEET APIを使用したオンライン展示会 - 1",
+      "caption3": "O2MEET APIを使用したオンライン展示会 - 2",
+      "mainTasksList": "<li>テスト・運営サーバーゼロダウンタイムデプロイ</li><li>行事情報、アンケート、商品、ファイル添付、カテゴリDBMS設計</li><li>行事情報、アンケート、商品、ファイル添付API開発</li><li>行事情報管理者Web開発</li>",
+      "detailedTasksList": "<li>ログイン<ul><li>Cookieにログイントークンを保存し、サーバー側と通信してログイン維持機能制作</li><li>トークンをサーバーにリダイレクト後、有効性を検証するSSO機能制作</li></ul></li><li>アンケート<ul><li>アンケートタイプ・行事コード・インデックス基準で共通アンケート、ビジネスミーティングアンケート機能制作</li><li>管理者Webで会員・非会員のアンケート結果集計一覧・Excelダウンロード制作</li></ul></li><li>商品<ul><li>商品タイプ・行事コードに応じて商品をグループ化</li><li>多言語設定のため商品共通情報テーブルと言語別設定テーブル設計 (1:N)</li></ul></li><li>行事情報<ul><li>管理者Web画面設計・行事基本情報、ヘッダーメニュー、ナビゲーションバー、フッター、行事使用言語、詳細オプション機能制作</li><li>ドメイン検証を通じて行事会場への移動機能制作</li></ul></li><li>統計<ul><li>サブクエリからJoinに変更してクエリパフォーマンス改善</li></ul></li>",
+      "achievementsList": "<li>管理者Webアクセス統計・動画統計照会クエリを40秒から1秒に改善・Excelダウンロード実装</li><li>アンケートAPI開発・開発文書共有で行事別맞춤アンケート生成・分析を容易に</li><li>ファイル添付時に/行事名/年月日/カテゴリのルールで一貫性あるデータ提供</li><li>管理者Webでユーザーが行事趣旨に合わせてヘッダー、フッター、ナビゲーターバー、メニューを管理できるように</li><li>一つのサーバーにドメインに応じて異なる行事へ移動でリソース効率性を向上</li>",
+      "lessonsText": "プロジェクトを通じてCSR、SSR、MPA、SPA、Cookie、SessionなどのフロントエンドのP基本概念とES5、ES6文法を習得できました。<br/>またJSPを扱い、同期通信と非同期通信の違いも実感しながら学ぶことができました。<br/>一つのサーバーで複数のドメインをポートフォワーディングで接続し、ユーザーが目的のメインページに移動させる方法を自ら考えて実装し、世の中にはさまざまな効率的な方法があり、自分にもできるという自信を得た貴重な経験でした。"
+    },
+    "healingfesta": {
+      "description": "慶州で楽しむ心身の免疫を高めるフェスティバルを目的に、ヨガ・ピラティス・シンギングボールなどのオフライン講義をオンラインで予約するWebプロジェクト",
+      "teamSizeText": "4名（企画2名、フロントエンド2名）",
+      "url1Label": "ヒーリングフェスタ2021",
+      "serviceEnded": "サービス終了",
+      "caption0": "ヒーリングフェスタ2021 ポスター",
+      "mainTasksList": "<li>O2MEET APIとの非同期通信でログイン、会員登録、掲示板、アンケート機能のデータ呼び出し・画面制作</li><li>モバイル決済モジュール制作</li><li>テスト・デバッグ</li>",
+      "detailedTasksList": "<li>会員登録<ul><li>正規表現でID、メール、パスワードの必須値検証機能制作</li><li>O2MEET SMS認証APIと通信してメール本人認証機能制作</li></ul></li><li>ログイン<ul><li>localStorageにログイントークンを保存し、サーバーと通信してログイン維持機能制作</li></ul></li><li>掲示板<ul><li>管理者Web投稿作成/修正/削除：O2MEET APIと通信・recoil.jsで状態値管理</li><li>ユーザーWeb：掲示板別投稿一覧照会機能制作</li><li>O2MEETファイル添付APIと通信して投稿別ファイル添付機能制作</li></ul></li><li>アンケート<ul><li>管理者Webアンケート作成/修正/削除：O2MEET APIと通信・recoil.jsで状態値管理</li><li>管理者Webアンケート結果作成/修正/削除：アンケート点数範囲の指定</li></ul></li>",
+      "achievementsList": "<li>管理者Webの掲示板、アンケート、会員情報照会機能を完成</li><li>ユーザーがモバイルで講義決済・キャンセルをエラーなくスムーズに実行できるようになった</li>",
+      "lessonsText": "初めてReactと決済モジュールを実装したプロジェクトでした。<br/>O2MEET APIを活用してWebを制作しながら非同期通信の概念とES6文法を習得でき、決済機能を初めて実装した際に「同一オリジンポリシー(Same-Origin Policy)」問題に直面しました。<br/>その過程で「複数のプロジェクトで再利用しやすい方式で作れないか」というアイデアが生まれ、一つの決済モジュールで決済の開始から終了まで完結させ、Webでは決済結果だけを表示する構成にした時の達成感は今でも鮮明に覚えています。<br/>シナリオを自ら構成し開発を終えた後、実際の運営環境で決済がエラーなくスムーズに動作した時、初めて自分自身に開発者としての可能性を感じた瞬間でした。"
+    },
+    "dikidiki": {
+      "description": "DDPに位置する子供向け遊び場で、チケット予約、イベント案内、子供の遊び範囲レポートを提供するWebプロジェクト",
+      "teamSizeText": "3名（運営チーム2名、開発チーム1名）",
+      "url1Label": "ディキディキWeb",
+      "caption0": "メイン",
+      "caption1": "お知らせ",
+      "caption2": "会員登録",
+      "caption3": "紹介",
+      "mainTasksList": "<li>Web保守</li>",
+      "detailedTasksList": "<li>ディキディキ運営チームとのスケジュール調整</li><li>要件定義書・画面設計書に基づきメインバナー、ポップアップおよびWebページ全体の画像・文言修正</li>",
+      "achievementsList": "<li>Webページ修正後にテストサーバーへデプロイし、ディキディキ運営チームとテストを実施して運営サーバーにエラーがないことを確認</li><li>スケジュール通りに保守を進め、ユーザーへの情報混乱を防いだ</li><li>バージョン管理ツールGitを適用し、チームメンバーと作業履歴を共有・ソースを保存</li>",
+      "lessonsText": "ディキディキプロジェクトは、私が初めて現場でGitを活用した経験であり、前任者のソースコードを分析しながら始めた作業でした。<br/>ソース分析の過程で決済モジュール実装に関する知識と想像力を培うことができ、フロントエンド業務の経験はありませんでしたが、CSSとHTMLタグを直接扱いながらフロントへの自信も得ることができて嬉しかったです。また運営サーバーにSSHでアクセスしてファイルを直接修正・デプロイし、実際の現場運営に貢献できることに気づき、開発者としてさらに成長できた感謝な経験でした。<br/>1年間の保守担当後に別のチームメンバーへ引き継いだ時は、寂しさと解放感が交錯していた記憶があります。"
+    }
+  }
+}
