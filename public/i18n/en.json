@@ -68,7 +68,7 @@
     "subtitle": "My Development Journey",
     "thermolab": {
       "company": "Thermolab Korea",
-      "period": "2023.04 ~ Present",
+      "period": "2023.04 ~ 2026.04",
       "position": "PaaS Dev Team / Assistant Manager",
       "description": "Expanded into the <strong>logistics and packaging</strong> domain, building mobile and IoT servers for real-time data logger temperature aggregation and developing a monitoring system with report generation.",
       "ach1": "<strong>SmartPod Mobile & IoT Server Development</strong>",
@@ -103,7 +103,7 @@
     "detailBtn": "View Details",
     "smartpod": {
       "name": "SmartPod",
-      "period": "2023.04 ~ Ongoing",
+      "period": "2023.04 ~ 2026.04",
       "description": "Real-time data logger temperature aggregation and monitoring system",
       "alt": "SmartPod Project"
     },
